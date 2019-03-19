@@ -83,18 +83,19 @@
                       <nav>
                         <ul class="nav topnav">
                           <li class="active">
-                            <a href="{% url 'content:about' %}">More Insight</a>
+                            <a href="{% url 'content:about' %}">Insight</a>
                           </li>
                           <li class="dropdown">
-                            <a href="#">Features <i class="icon-angle-down"></i></a>
+                            <a href="#"> Explore <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                              <li><a href="typography.html">Typography</a></li>
-                              <li><a href="components.html">Components</a></li>
-                              <li><a href="icons.html">Icons</a></li>
-                              <li><a href="icon-variations.html">Icon variations</a></li>
+                              <li><a href="typography.html">Data Warehouse</a></li>
+                              <li><a href="{% url 'content:success' %}">Success Stories</a></li>
+                              <li><a href="icons.html">Partners</a></li>
+                              <li><a href="icon-variations.html">Resources</a></li>
 
                             </ul>
                           </li>
+
                           <li class="dropdown">
                             <a href="#">Pages <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -103,7 +104,7 @@
                               <li><a href="404.html">404</a></li>
                             </ul>
                           </li>
-                          <li class="dropdown">
+                          <!-- <li class="dropdown">
                             <a href="#">Portfolio <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                               <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
@@ -111,8 +112,8 @@
                               <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
                               <li><a href="portfolio-detail.html">Portfolio detail</a></li>
                             </ul>
-                          </li>
-                          <li class="dropdown">
+                          </li> -->
+                          <!-- <li class="dropdown">
                             <a href="#">Blog <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                               <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
@@ -120,12 +121,33 @@
                               <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
                               <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
                             </ul>
+                          </li> -->
+                          <li class="dropdown">
+                            <a href="#"><i class="icon-cloud-download"></i> Changelog <i class="icon-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="typography.html">Download SmartCare  <i class="icon-download"></i></a></li>
+                              <li><a href="components.html">Extra Resources</a></li>
+                            </ul>
+                          </li>
+
+                          <li class="dropdown">
+                            <a href="#"><i class="icon-medkit"></i> SmartCare <i class="icon-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="typography.html">Product Overview</a></li>
+                              <li><a href="components.html">Functional Modules</a></li>
+                              <li><a href="icons.html">Technology Stack</a></li>
+                              <li><a href="icon-variations.html">Development Pipeline</a></li>
+                              <li><a href="icon-variations.html">Technical Updates</a></li>
+                              <li><a href="icon-variations.html">Deployment</a></li>
+                              <li><a href="icon-variations.html">Training</a></li>
+                            </ul>
                           </li>
                           <li>
                             <a href="/contact">Contact </a>
                           </li>
+
                              <li class="dropdown">
-                            <a href="#">Accounts <i class="icon-angle-down"></i></a>
+                            <a href="#"><i class="icon-user-md"> Account </i><i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
 
                                 {%  if request.user.is_authenticated and request.user.is_staff %}
