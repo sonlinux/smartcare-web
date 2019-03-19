@@ -26,7 +26,7 @@ class HomeView(TemplateView):
 
         partner_qs = Partner.objects.all()
         partner_list = list(partner_qs)
-        random_four = list(random.sample(partner_list, 4))
+        random_four = list(random.sample(partner_list, 5))
         context['partners'] = random_four
 
         return context

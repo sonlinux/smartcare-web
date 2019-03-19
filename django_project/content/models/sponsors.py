@@ -11,6 +11,11 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from ckeditor.fields import RichTextField
 
+PARTNER_CHOICES = (
+    ('PT', 'PARTNER'),
+    ('SP', 'SPONSOR'),
+    ('OT', 'OTHER'),
+)
 
 class Partner(models.Model):
     name = models.CharField(
@@ -26,6 +31,14 @@ class Partner(models.Model):
         _('Description'),
         blank=True,
         null=True
+    )
+
+    partner_type = models.CharField(
+        _('Type'),
+        max_length=255,
+        blank=True,
+        null=True,
+        choices=PARTNER_CHOICES
     )
     logo = models.ImageField(
         _('Logo'),

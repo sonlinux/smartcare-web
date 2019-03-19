@@ -32,7 +32,7 @@ class SuccessStoryAdmin(admin.ModelAdmin):
 
 
 class PartnerAdmin(admin.ModelAdmin):
-    list_display = ['name', 'created', 'active']
+    list_display = ['name', 'created', 'partner_type', 'active']
 
 
 admin.site.register(AboutUs, AboutUsAdmin)

@@ -1,5 +1,6 @@
 {% extends "layouts.html" %}
 {% load staticfiles %}
+{% load thumbnail %}
 
 {% block content %}
 <!-- section intro -->
@@ -8,7 +9,7 @@
     <h5 style="color:white; font-weight:bold">SmartCare EHR <i class="icon-stethoscope" style="color:white; font-weight:bold"></i></h5>
     <p style="color:white">Where every life matters to us and we try saving it.</p>
     <div style="margin-bottom: -160pt">
-      <a href="#content" class="btn-get-started scrollto">Foreword by iDeas project Director</a>
+      <a href="#" class="btn-get-started scrollto">Foreword by iDeas project Director</a>
     </div>
   </div>
 </section>
@@ -21,6 +22,8 @@
     <div class="row">
 
       <!--Chart Placement[2]-->
+      <!-- <h4 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">DEPLOYED</h3> -->
+
       <canvas id="myChart" width="50" height="50"></canvas>
 
       <script>
@@ -30,7 +33,7 @@
         // type: 'polarArea',
           type: 'doughnut',
           data: {
-              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+              labels: ['Lusaka', 'Southern', 'Eastern', 'Northern', 'Copperbelt', 'Western'],
               datasets: [{
                   label: '# of Votes',
                   data: [12, 19, 3, 5, 2, 3],
@@ -73,15 +76,17 @@
           <div class="span2">
             <div class="box aligncenter">
               <div class="icon">
-                <span class="badge badge-info badge-circled">1</span>
-                <i class="ico icon-dropbox icon-5x"></i>
-              </div>
-              <div class="text">
-                <h4><strong>{{ partner.name }}</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am anumat lib persum sea facilisis.
-                </p>
-                <a href="#">Learn More</a>
+                {% if partner.partner_type == "PT" %}
+                  <span class="badge badge-warning badge-circled"><i class="icon-heart-empty"></i></span>
+                {% endif %}
+                {% if partner.partner_type == "SP" %}
+                  <span class="badge badge-success badge-circled"><i class="icon-heart-empty"></i></span>
+                {% endif %}
+                {% if partner.partner_type == "OT" %}
+                  <span class="badge badge-info badge-circled"><i class="icon-heart-empty"></i></span>
+                {% endif %}
+                <a href="{{ partner.url }}" target="_blank"><img src="{% thumbnail partner.logo 172x60 crop %}" /></a>
+                <p><strong>{{ partner.name|upper }}</strong></p>
               </div>
             </div>
           </div>
@@ -101,21 +106,15 @@
           <div class="span12">
             <div class="aligncenter">
               <h3>Our most recent works</h3>
-              <blockquote>
-                Lorem ipsum dolor sit amet, labores dolorum scriptorem eum an, te quodsi sanctus neglegentur eam, et lorem persecuti conclusionemque mei.
-              </blockquote>
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="span3">
-            <h6>Read about smartcare and find out what makes it great platform in health.</h6>
+            <h6>Are you wondering what SmartCare is?</h6>
             <p>
-              Per an putent audiam adolescens, mel ceteros fierent democritum te. No ubique malorum euismod usu.
-            </p>
-            <p>
-              Movet facilis democritum ea quo. Est ei illum consulatu accommodare, nam dicta expetenda suavitate ad.
+              Read about smartcare and find out what makes it a great platform in health.
             </p>
           </div>
 
