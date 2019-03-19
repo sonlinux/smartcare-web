@@ -19,7 +19,8 @@ INSTALLED_APPS += (
     'crispy_forms',
     'contactus',
     'ckeditor',
-    'ckeditor_uploader' # for file upload
+    'ckeditor_uploader', # for file upload
+    'ordered_model',
 )
 
 # REST_FRAMEWORK = {

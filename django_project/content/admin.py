@@ -5,7 +5,9 @@ from .models.aboutus import (
     Foreword)
 
 from .models.category import Category
+from models.sponsors import Partner
 from .models.success_story import SuccessStory, Author
+from .models.carousel_headers import CarouselHeader
 
 
 class AboutUsAdmin(admin.ModelAdmin):
@@ -29,10 +31,16 @@ class SuccessStoryAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated',)
 
 
+class PartnerAdmin(admin.ModelAdmin):
+    list_display = ['name', 'created', 'active']
+
+
 admin.site.register(AboutUs, AboutUsAdmin)
 admin.site.register(Foreword, ForewordAdmin)
 admin.site.register(SuccessStory, SuccessStoryAdmin)
+admin.site.register(Partner, PartnerAdmin)
 admin.site.register(Category)
+admin.site.register(CarouselHeader)
 admin.site.register(Author)
 
 # class smartcareAdmin(admin.ModelAdmin):
