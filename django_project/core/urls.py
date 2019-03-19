@@ -33,8 +33,9 @@ def handler500(request):
     })))
 
 urlpatterns = [
-    url(r'^', include('content.urls')),
+    url(r'^', include('content.urls', namespace='content')),
     url('^contact/', include(contact_urls)),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^site-admin/', include(admin.site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^accounts/', include('allauth.urls')),

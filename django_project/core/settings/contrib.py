@@ -18,6 +18,8 @@ INSTALLED_APPS += (
     'rest_framework_swagger',
     'crispy_forms',
     'contactus',
+    'ckeditor',
+    'ckeditor_uploader' # for file upload
 )
 
 # REST_FRAMEWORK = {
@@ -136,3 +138,5 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 LOGIN_REDIRECT_URL = "/"
 CONTACT_US_EMAIL = 'mukomalison@gmail.com'
+
+CKEDITOR_UPLOAD_PATH = "media/uploads"
