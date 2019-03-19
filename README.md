@@ -2,11 +2,29 @@
 smartcare
 ============
 
-smartcare is a Django app.
+smartcare-website is a Django app powering the main website for smartcare 
+health system.
 
-The latest source code is available at http://github.com/sonlinux/smartcare.
+The latest source code is available at http://github.com/sonlinux/smartcare-web.
 
 * **Developers:** See our `project setup guide`_ and `developer guide`_
+
+
+Project activity
+----------------
+
+Story queue on Waffle:
+
+* [![Stories in Ready](https://badge.waffle.io/sonlinux/smartcare-web.svg?label=ready&title=Ready)](http://waffle.io/sonlinux/smartcare-web)
+* [![Stories in In Progress](https://badge.waffle.io/sonlinux/smartcare-web.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/sonlinux/smartcare-web)
+
+[![Throughput Graph](https://graphs.waffle.io/sonlinux/smartcare-web/throughput.svg)](https://waffle.io/sonlinux/smartcare-web/metrics)
+
+* Current test status master: [![Build Status](https://travis-ci.org/inasafe/inasafe.svg?branch=master)](https://travis-ci.org/inasafe/inasafe)
+
+* Current test status develop: [![Build Status](https://travis-ci.org/inasafe/inasafe.svg?branch=develop)](https://travis-ci.org/inasafe/inasafe)
+
+
 
 Quick Project Setup
 -------------------
@@ -60,8 +78,16 @@ So as to create your admin account:
 make superuser
 ```
 
+[![PyCharm](https://cloud.githubusercontent.com/assets/1421861/16826865/4cde910c-49ab-11e6-95ae-48cf21f3a69f.png)](https://www.jetbrains.com/pycharm) 
+
+We use [PyCharm](https://www.jetbrains.com/pycharm) for our python development work 
+
 Thank you
 _________
 
-Authored By.
-* Alison Mukoma: mukomalison@gmail.com
+
+Thank you to the individual contributors who have helped to build SmartCare 
+website:
+
+* Alison Mukoma: AMukoma@brhc.com
+* Atupele Mboya: AMboya@brhc.com
