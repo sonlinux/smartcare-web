@@ -9,7 +9,7 @@ from django.conf.urls.static import static
 from django.http import HttpResponseServerError
 from django.template import loader, Context
 from rest_framework_swagger.views import get_swagger_view
-
+from contactus import urls as contact_urls
 
 admin.autodiscover()
 handler404 = 'base.viewsets.error_views.custom_404'
@@ -34,7 +34,7 @@ def handler500(request):
 
 urlpatterns = [
     url(r'^', include('content.urls')),
-    url('^contact/', include('contactus.urls')),
+    url('^contact/', include(contact_urls)),
     url(r'^site-admin/', include(admin.site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^accounts/', include('allauth.urls')),
