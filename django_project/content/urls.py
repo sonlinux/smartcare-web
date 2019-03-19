@@ -11,8 +11,11 @@ __copyright__ = ''
 from django.conf.urls import url
 from .views.home import HomeView
 from .views.home import AboutUsView
+from .views.success_story import SuccessStoryList
+
 
 urlpatterns = [
     url(r'^$', HomeView.as_view(), name='home'),
-    url(r'^about/$', AboutUsView.as_view(), name='about')
+    url(r'^about/$', AboutUsView.as_view(), name='about'),
+    url(r'^success/$', SuccessStoryList.as_view(), name='success')
 ]
