@@ -9,7 +9,7 @@
       <div class="row">
         <div class="span4">
           <div class="inner-heading">
-            <h2>About us</h2>
+            <h2>More Insight</h2>
           </div>
         </div>
         <div class="span8">
@@ -42,17 +42,10 @@
 
               <div class="widget">
                 <h5 class="widgetheading">{{ foreword.title }}<span></span></h5>
-                <img class="img-responsive img-circle pull-right" src="{% thumbnail foreword.photo 493x215 crop %}" style="margin-top: -10pt"/></a>
+                <img class="img-responsive img-circle pull-right" src="{% thumbnail foreword.photo 400x400 crop %}" style="margin-top: -10pt"/></a>
                   <blockquote>
                     {{ foreword.content|safe }}
                   </blockquote>
-                <!-- <ul class="contact-info">
-                  <li><label>Address :</label> Tinggi sekali tower Jl.Kemacetan timur<br /> Jakarta selatan - Indonesia</li>
-                  <li><label>Phone :</label>+62 123 456 78 / +62 123 456 79</li>
-                  <li><label>Fax : </label>+62 123 456 10 / +62 123 456 11</li>
-                  <li><label>Email : </label> info@yourdomain.com</li>
-                </ul> -->
-
               </div>
             </aside>
         </div>
@@ -65,85 +58,8 @@
         </div>
       </div>
       <!-- end divider -->
-
-      <div class="row team">
-        <div class="span12">
-          <h4>Foreword from IDeas Project Director</h4>
-        </div>
-
-        <div class="span3">
-          <div class="team-box">
-            <a href="#" class="thumbnail"></a>
-            <div class="roles aligncenter">
-              <p class="lead"><strong>Vincent Austin Jr</strong></p>
-              <p>
-                CEO - Founder
-              </p>
-              <p>
-                <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
-              </p>
-
-            </div>
-          </div>
-        </div>
-        <div class="span3">
-          <div class="team-box">
-            <a href="#" class="thumbnail"><img src="img/dummies/team2.jpg" alt="" /></a>
-            <div class="roles aligncenter">
-              <p class="lead"><strong>Tommy Laugher</strong></p>
-              <p>
-                Lead designer
-              </p>
-              <p>
-                <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="span3">
-          <div class="team-box">
-            <a href="#" class="thumbnail"><img src="img/dummies/team3.jpg" alt="" /></a>
-            <div class="roles aligncenter">
-              <p class="lead"><strong>Gabirelle Borowski</strong></p>
-              <p>
-                Customer support
-              </p>
-              <p>
-                <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="span3">
-          <div class="team-box">
-            <a href="#" class="thumbnail"><img src="img/dummies/team4.jpg" alt="" /></a>
-            <div class="roles aligncenter">
-              <p class="lead"><strong>Benny Strongton</strong></p>
-              <p>
-                Coffee maker
-              </p>
-              <p>
-                <a href="#"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
-                <a href="#"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
-
-
-
 </div>
-
 
 {% endblock content %}
