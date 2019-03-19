@@ -4,4 +4,4 @@ __license__ = 'GPL'
 __doc__ = 'Database design for the content data content.'
 
 
-from .catalog import *  #  noqa
+from .aboutus import *  #  noqa
