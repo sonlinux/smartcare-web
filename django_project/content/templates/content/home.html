@@ -1,15 +1,15 @@
 {% extends "layouts.html" %}
 {% load staticfiles %}
+{% load thumbnail %}
 
 {% block content %}
-
 <!-- section intro -->
 <section id="intro">
   <div class="intro-content">
-    <h2>Welcome to SmartCare!</h2>
-    <h3>Where every life matters to us and we try saving it.</h3>
-    <div>
-      <a href="#content" class="btn-get-started scrollto">Foreword by iDeas project Director</a>
+    <h5 style="color:white; font-weight:bold">SmartCare EHR <i class="icon-stethoscope" style="color:white; font-weight:bold"></i></h5>
+    <p style="color:white">Where every life matters to us and we try saving it.</p>
+    <div style="margin-bottom: -160pt">
+      <a href="#" class="btn-get-started scrollto">Foreword by iDeas project Director</a>
     </div>
   </div>
 </section>
@@ -18,94 +18,79 @@
 <section id="content">
   <div class="container">
 
-
+    <div class="span3">
     <div class="row">
-      <div class="span12">
-        <div class="row">
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="icon">
-                <span class="badge badge-info badge-circled">1</span>
-                <i class="ico icon-dropbox icon-5x"></i>
-              </div>
-              <div class="text">
-                <h4><strong>Out of the box</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am anumat lib persum sea facilisis.
-                </p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="icon">
-                <span class="badge badge-success badge-circled">2</span>
-                <i class="ico icon-bitbucket icon-5x"></i>
-              </div>
-              <div class="text">
-                <h4><strong>New taste</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                </p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="icon">
-                <span class="badge badge-warning badge-circled">3</span>
-                <i class="ico icon-rocket icon-5x"></i>
-              </div>
-              <div class="text">
-                <h4><strong>Faster load</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                </p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
-          <div class="span3">
-            <div class="box aligncenter">
-              <div class="icon">
-                <span class="badge badge-important badge-circled">4</span>
-                <i class="ico icon-cut icon-5x"></i>
-              </div>
-              <div class="text">
-                <h4><strong>Cut your times</strong></h4>
-                <p>
-                  Lorem ipsum dolor sit amet, has ei ipsum scaevola deseruisse am sea facilisis.
-                </p>
-                <a href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
+      <!--Chart Placement[2]-->
+      <!-- <h4 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">DEPLOYED</h3> -->
+
+      <canvas id="myChart" width="50" height="50"></canvas>
+
+      <script>
+      var ctx = document.getElementById('myChart').getContext('2d');
+
+      var myChart = new Chart(ctx, {
+        // type: 'polarArea',
+          type: 'doughnut',
+          data: {
+              labels: ['Lusaka', 'Southern', 'Eastern', 'Northern', 'Copperbelt', 'Western'],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [12, 19, 3, 5, 2, 3],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: ''
+      });
+      </script>
+
+
+
         </div>
-      </div>
     </div>
-
-
     <div class="row">
-      <div class="span12">
-        <div class="cta-box">
-          <div class="row">
-            <div class="span8">
-              <div class="cta-text">
-                <h2>Special price in very <span>limited</span> times</h2>
-              </div>
-            </div>
-            <div class="span4">
-              <div class="cta-btn">
-                <a href="#" class="btn btn-color">Call Action <i class="icon-caret-right"></i></a>
-              </div>
-            </div>
+      <div class="span8">
 
+        <div class="aligncenter">
+          <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3>
+        </div>
+        <!-- style="color:#84c75b;"  -->
+        <div class="row">
+          {% for partner in partners %}
+          <div class="span2">
+            <div class="box aligncenter">
+              <div class="icon">
+                {% if partner.partner_type == "PT" %}
+                  <span class="badge badge-warning badge-circled"><i class="icon-heart-empty"></i></span>
+                {% endif %}
+                {% if partner.partner_type == "SP" %}
+                  <span class="badge badge-success badge-circled"><i class="icon-heart-empty"></i></span>
+                {% endif %}
+                {% if partner.partner_type == "OT" %}
+                  <span class="badge badge-info badge-circled"><i class="icon-heart-empty"></i></span>
+                {% endif %}
+                <a href="{{ partner.url }}" target="_blank"><img src="{% thumbnail partner.logo 172x60 crop %}" /></a>
+                <p><strong>{{ partner.name|upper }}</strong></p>
+              </div>
+            </div>
           </div>
-
-
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -120,82 +105,42 @@
         <div class="row">
           <div class="span12">
             <div class="aligncenter">
-              <h3>Our features and pricing</h3>
-              <blockquote>
-                Lorem ipsum dolor sit amet, labores dolorum scriptorem eum an, te quodsi sanctus neglegentur eam, et lorem persecuti conclusionemque mei.
-              </blockquote>
+              <h3>Our most recent works</h3>
             </div>
           </div>
         </div>
 
         <div class="row">
-
           <div class="span3">
-            <h5>Choose package and start grow</h5>
+            <h6>Are you wondering what SmartCare is?</h6>
             <p>
-              Per an putent audiam adolescens, mel ceteros fierent democritum te. No ubique malorum euismod usu.
-            </p>
-            <p>
-              Movet facilis democritum ea quo. Est ei illum consulatu accommodare, nam dicta expetenda suavitate ad.
+              Read about smartcare and find out what makes it a great platform in health.
             </p>
           </div>
 
-          <div class="span3">
-            <div class="pricing-box-plain">
-              <div class="heading">
-                <h4>Standard</h4>
-                <span>$9 / Month</span>
+          {% for recent in recent_stories %}
+              <div class="span3">
+                <div class="pricing-box-plain">
+                  <div class="heading">
+                    <h6><small><b>{{ recent.title|truncatechars:27 }}</b></small></h6>
+                    <i>Published on: {{ recent.updated|date:"M, d, Y"}}</i>
+                  </div>
+                  <div class="desc">
+                    <ul>
+                      <blockquote cite="#">
+                          {{ recent.content|truncatechars:64|safe }}
+                      </blockquote>
+                    </ul>
+                  </div>
+                  <div class="action">
+                    <a href="{% url 'content:success_detail' story_pk=recent.id %}" class="btn btn-info">Go to details</a>
+                  </div>
+                </div>
               </div>
-              <div class="desc">
-                <ul>
-                  <li>For 1 Application</li>
-                  <li>Free one year support</li>
-                  <li>Unlimited disk spaces</li>
-                </ul>
-              </div>
-              <div class="action">
-                <a href="#" class="btn btn-inverse">Sign Up</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="span3">
-            <div class="pricing-box-plain">
-              <div class="heading">
-                <h4>Medium</h4>
-                <span>$29 / Month</span>
-              </div>
-              <div class="desc">
-                <ul>
-                  <li>For 10 Applications</li>
-                  <li>Free life time support</li>
-                  <li>Unlimited disk spaces</li>
-                </ul>
-              </div>
-              <div class="action">
-                <a href="#" class="btn btn-inverse">Sign Up</a>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
 
-          <div class="span3">
-            <div class="pricing-box-plain">
-              <div class="heading">
-                <h4>Elite</h4>
-                <span>$59 / Month</span>
-              </div>
-              <div class="desc">
-                <ul>
-                  <li>For unlimited appliacations</li>
-                  <li>Free life time support</li>
-                  <li>Unlimited disk spaces</li>
-                </ul>
-              </div>
-              <div class="action">
-                <a href="#" class="btn btn-color">Sign Up</a>
-              </div>
-            </div>
-          </div>
+
         </div>
 
       </div>
@@ -204,75 +149,4 @@
   </div>
 </section>
 
-<section id="works">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <h3>Recent works</h3>
-        <div class="row">
-
-          <div class="grid cs-style-3">
-            <div class="span3">
-              <div class="item">
-                <figure>
-                  <div><img src="img/dummies/works/1.jpg" alt=""></div>
-                  <figcaption>
-                    <h3>Portfolio name</h3>
-                    <p>
-                      <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                      <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="span3">
-              <div class="item">
-                <figure>
-                  <div><img src="img/dummies/works/2.jpg" alt=""></div>
-                  <figcaption>
-                    <h3>Portfolio name</h3>
-                    <p>
-                      <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                      <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="span3">
-              <div class="item">
-                <figure>
-                  <div><img src="img/dummies/works/3.jpg" alt=""></div>
-                  <figcaption>
-                    <h3>Portfolio name</h3>
-                    <p>
-                      <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                      <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="span3">
-              <div class="item">
-                <figure>
-                  <div><img src="img/dummies/works/4.jpg" alt=""></div>
-                  <figcaption>
-                    <h3>Portfolio name</h3>
-                    <p>
-                      <a href="img/dummies/works/big.png" data-pretty="prettyPhoto[gallery1]" title="Portfolio caption here"><i class="icon-zoom-in icon-circled icon-bglight icon-2x active"></i></a>
-                      <a href="#"><i class="icon-file icon-circled icon-bglight icon-2x active"></i></a>
-                    </p>
-                  </figcaption>
-                </figure>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 {% endblock content %}

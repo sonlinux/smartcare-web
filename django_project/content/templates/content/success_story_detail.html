@@ -1,0 +1,110 @@
+{% extends "layouts.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block content %}
+<div class="container">
+  <div class="span12">
+    <div class="row" style="padding-top:20pt; padding left: -20pt">
+      <h5 class="heading"btn button-success""><b><i class="icon-folder-open-alt"></i> {{ story.title }}</b><span></span></h5>
+    </div>
+  </div>
+
+  <div class="row">
+       <div class="span6">
+         <div class="testimonial">
+           <!-- <blockquote>
+             <p>
+               There are many variations of passages of randomised words which don't look even slightly believable. You need to be sure there isn't anything embarrassing of text.
+             </p>
+           </blockquote> -->
+           <div class="author">
+
+
+             <div class="span6">
+                         <h4>Header details</h4>
+                         <dl class="dl-horizontal">
+                           <dt>Authored by: </dt>
+                           <dd>{{ story.author }}</dd>
+                           <dt>Posted On: </dt>
+                           <dd>{{ story.created|date:"m-d, Y"}}</dd>
+                           <dt>Category: </dt>
+                           <dd>{{ story.category }}</dd>
+                          </dl>
+                       </div>
+
+
+             <!-- <p class="name">{{ story.author }}</p>
+             <span class="info">{{ story.category}}, <a href="#">{{ story.created|date:"Y, %m, d"}}</a></span> -->
+           </div>
+         </div>
+
+         <h4 style="padding-top:20pt">Story Content</h4>
+         <span class="pullquote-right margintop10">
+        {{ story.content|safe }}          </span>
+
+       </div>
+       <div class="span6">
+
+            <!-- <h4>Accordion</h4> -->
+           <!-- start: Accordion -->
+           <div class="row">
+
+             <img src="{% thumbnail story.photo 600x300 crop %}" class="img-rounded pull-right" alt="" style="padding-bottom: 10pt; margin-left: 10pt"/>
+         </div>
+           <div class="accordion" id="accordion2">
+             <div class="accordion-group">
+               <div class="accordion-heading">
+                 <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+           <i class="icon-minus"></i> Collapsible Group Item #1 </a>
+               </div>
+               <div id="collapseOne" class="accordion-body collapse in">
+                 <div class="accordion-inner">
+                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                   on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                   farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                 </div>
+               </div>
+             </div>
+             <div class="accordion-group">
+               <div class="accordion-heading">
+                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+           <i class="icon-plus"></i> Collapsible Group Item #2 </a>
+               </div>
+               <div id="collapseTwo" class="accordion-body collapse">
+                 <div class="accordion-inner">
+                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                   on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                   farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                 </div>
+               </div>
+             </div>
+             <div class="accordion-group">
+               <div class="accordion-heading">
+                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+           <i class="icon-plus"></i> Collapsible Group Item #3 </a>
+               </div>
+               <div id="collapseThree" class="accordion-body collapse">
+                 <div class="accordion-inner">
+                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
+                   on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                   farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                 </div>
+               </div>
+             </div>
+           </div>
+           <!--end: Accordion -->
+
+       </div>
+     </div>
+
+     <!-- divider -->
+     <div class="row">
+       <div class="span12">
+         <div class="solidline"></div>
+       </div>
+     </div>
+     <!-- end divider -->
+</div>
+
+{% endblock content %}

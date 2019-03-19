@@ -15,8 +15,12 @@
   <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
-  <!-- Theme skin -->
+    <!-- Theme skin -->
   <link id="t-colors" href="{% static 'color/default.css' %}" rel="stylesheet" />
 
   <!-- Fav and touch icons -->
@@ -74,7 +78,7 @@
               <div class="row nomargin">
                 <div class="span4">
                   <div class="logo">
-                    <h1><a href="/"> <img src="{% static 'img/coa.png' %}" height='50' width='50' style="margin-top:-15pt; margin-bottom:2pt"/></a></h1>
+                    <h1><a href="/"> <img src="{% static 'img/coa.png' %}" height='50' width='50' style="margin-top:-15pt; margin-bottom:2pt"/> SmartCare</a></h1>
                   </div>
                 </div>
                 <div class="span8">
@@ -83,27 +87,27 @@
                       <nav>
                         <ul class="nav topnav">
                           <li class="active">
-                            <a href="{% url 'content:about' %}">More Insight</a>
+                            <a href="{% url 'content:about' %}">Insight</a>
                           </li>
                           <li class="dropdown">
-                            <a href="#">Features <i class="icon-angle-down"></i></a>
+                            <a href="#"> Explore <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                              <li><a href="typography.html">Typography</a></li>
-                              <li><a href="components.html">Components</a></li>
-                              <li><a href="icons.html">Icons</a></li>
-                              <li><a href="icon-variations.html">Icon variations</a></li>
+                              <li><a href="{% url 'content:success' %}">Success Stories</a></li>
+                              <li><a href="typography.html">Data Warehouse</a></li>
+                              <li><a href="icons.html">Partners</a></li>
 
                             </ul>
                           </li>
-                          <li class="dropdown">
+
+                          <!-- <li class="dropdown">
                             <a href="#">Pages <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                               <li><a href="about.html">About us</a></li>
                               <li><a href="pricingbox.html">Pricing boxes</a></li>
                               <li><a href="404.html">404</a></li>
                             </ul>
-                          </li>
-                          <li class="dropdown">
+                          </li> -->
+                          <!-- <li class="dropdown">
                             <a href="#">Portfolio <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                               <li><a href="portfolio-2cols.html">Portfolio 2 columns</a></li>
@@ -111,8 +115,8 @@
                               <li><a href="portfolio-4cols.html">Portfolio 4 columns</a></li>
                               <li><a href="portfolio-detail.html">Portfolio detail</a></li>
                             </ul>
-                          </li>
-                          <li class="dropdown">
+                          </li> -->
+                          <!-- <li class="dropdown">
                             <a href="#">Blog <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                               <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
@@ -120,12 +124,34 @@
                               <li><a href="post-left-sidebar.html">Post left sidebar</a></li>
                               <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
                             </ul>
+                          </li> -->
+                          <li class="dropdown">
+                            <a href="#"><i class="icon-cloud-download"></i> Changelog <i class="icon-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="typography.html">SmartCare Release Notes  <i class="icon-lightbulb"></i></a></li>
+                              <li><a href="typography.html">Download SmartCare  <i class="icon-download"></i></a></li>
+                              <li><a href="typography.html">Extra Resources  <i class="icon-bell"></i></a></li>
+                            </ul>
+                          </li>
+
+                          <li class="dropdown">
+                            <a href="#"><i class="icon-medkit"></i> SmartCare <i class="icon-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="typography.html">Product Overview</a></li>
+                              <li><a href="components.html">Functional Modules</a></li>
+                              <li><a href="icons.html">Technology Stack</a></li>
+                              <li><a href="icon-variations.html">Development Pipeline</a></li>
+                              <li><a href="icon-variations.html">Technical Updates</a></li>
+                              <li><a href="icon-variations.html">Deployment</a></li>
+                              <li><a href="icon-variations.html">Training</a></li>
+                            </ul>
                           </li>
                           <li>
                             <a href="/contact">Contact </a>
                           </li>
+
                              <li class="dropdown">
-                            <a href="#">Accounts <i class="icon-angle-down"></i></a>
+                            <a href="#"><i class="icon-user-md"> Account </i><i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
 
                                 {%  if request.user.is_authenticated and request.user.is_staff %}
@@ -159,17 +185,14 @@
               <div class="row">
                 <div class="span4">
                   <div class="widget">
-                    <div class="footer_logo">
-                      <h3><a href="index.html"><img src="{% static 'img/brch.jpg' %}" height='30' width='30' /></i> Broadreach Corperation</a></h3>
-                    </div>
+
                     <address>
-      							  <strong>Remember company Inc.</strong><br>
-        							Somestreet KW 101, Park Village W.01<br>
-        							Jakarta 13426 Indonesia
+      							  <strong>Broadreach Corperation.</strong><br>
+        							UTH CDC building, first floor
         						</address>
                     <p>
-                      <i class="icon-phone"></i> (123) 456-7890 - (123) 555-7891 <br>
-                      <i class="icon-envelope-alt"></i> email@domainname.com
+                      <i class="icon-phone"></i> +260-976-516-789 <br>
+                      <i class="icon-envelope-alt"></i> info@brhc.com
                     </p>
                   </div>
                 </div>
@@ -188,12 +211,18 @@
                   </div>
                 </div>
                 <div class="span4">
-                  <div class="widget">
-                    <h5 class="widgetheading">From flickr</h5>
-                    <div class="flickr_badge">
-                      <script type="text/javascript" src="http://www.flickr.com/badge_code_v2.gne?count=8&amp;display=random&amp;size=s&amp;layout=x&amp;source=user&amp;user=34178660@N03"></script>
-                    </div>
-                    <div class="clear"></div>
+                  <div class="row">
+                  <div class="footer_logo">
+                    <h3 class="pull-right"><a href="index.html"><img src="{% static 'img/brhc.png' %}" height='200' width='200'style="background-color:rgba(201, 76, 76, 0.3)"/></i></a></h3>
+                  </div>
+                </div>
+                  <div class="about-links">
+                    <p>
+                        <a href="/">Home</a> |
+                        <a href="/success_stories">Success Stories</a> |
+                        <a href="/contact">Contact Us</a> |
+                        <a href="#">Changelog &amp; Resources</a> |
+                    </p>
                   </div>
                 </div>
               </div>
