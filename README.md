@@ -18,7 +18,7 @@ Story queue on Waffle:
 * [![Stories in Ready](https://badge.waffle.io/sonlinux/smartcare-web.svg?label=ready&title=Ready)](http://waffle.io/sonlinux/smartcare-web)
 * [![Stories in In Progress](https://badge.waffle.io/sonlinux/smartcare-web.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/sonlinux/smartcare-web)
 
-[![Throughput Graph](https://graphs.waffle.io/sonlinux/smartcare-web/throughput.svg)](https://waffle.io/sonlinux/smartcare-web/metrics)
+[![Throughput Graph](https://graphs.waffle.io/djangojobportal/djp/throughput.svg)](https://waffle.io/djangojobportal/djp/metrics)
 
 * Current test status master: [![Build Status](https://travis-ci.org/inasafe/inasafe.svg?branch=master)](https://travis-ci.org/inasafe/inasafe)
 
