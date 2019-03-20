@@ -1,5 +1,6 @@
 {% extends "layouts.html" %}
 {% load staticfiles %}
+{% load disqus_tags %}
 {% load thumbnail %}
 
 {% block content %}
@@ -106,6 +107,19 @@
        </div>
      </div>
      <!-- end divider -->
+
+
+    {% disqus_show_comments %}
+
+    <script id="dsq-count-scr" src="//smartcare.disqus.com/count.js" async></script>
+
+      <!-- divider -->
+      <div class="row">
+        <div class="span12">
+          <div class="solidline"></div>
+        </div>
+      </div>
+      <!-- end divider -->
 </div>
 
 {% endblock content %}

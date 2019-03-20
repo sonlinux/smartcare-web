@@ -21,7 +21,11 @@ INSTALLED_APPS += (
     'ckeditor',
     'ckeditor_uploader', # for file upload
     'ordered_model',
+    'disqus',
 )
+
+DISQUS_API_KEY = 'FOOBARFOOBARFOOBARFOOBARFOOBARF'
+DISQUS_WEBSITE_SHORTNAME = 'smartcare'
 
 # REST_FRAMEWORK = {
 #     # Use Django's standard `django.contrib.auth` permissions,

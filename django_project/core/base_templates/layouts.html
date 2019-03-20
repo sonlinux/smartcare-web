@@ -41,10 +41,6 @@
 </head>
 
 <body>
-
-
-
-
   <div id="wrapper">
 
       {% block head %}
@@ -75,12 +71,13 @@
               </div>
             </div>
             <div class="container">
-
-
               <div class="row nomargin">
                 <div class="span4">
-                  <div class="logo">
-                    <h1><a href="/"> <img src="{% static 'img/coa.png' %}" height='50' width='50' style="margin-top:-15pt; margin-bottom:2pt"/> SmartCare</a></h1>
+                  <div class="logo float-left">
+                    {% load thumbnail %}
+                    <div>
+                      <img src="{% static 'img/cdc.png' %}" class="img-rounded" height='200' width='150' style="image-rendering: crisp-edges;float:left; margin-bottom: -10pt; margin-top: -10pt;"/>
+                    </div>
                   </div>
                 </div>
                 <div class="span8">
@@ -91,15 +88,17 @@
                           <li class="active">
                             <a href="{% url 'content:about' %}">Insight</a>
                           </li>
-                          <li class="dropdown">
-                            <a href="#"> Explore <i class="icon-angle-down"></i></a>
+                          <li>
+                            <a href="{% url 'content:success' %}"> Blog</a>
+                          </li>
+                            <!-- <a href="#"> Blog<i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                               <li><a href="{% url 'content:success' %}">Success Stories</a></li>
                               <li><a href="typography.html">Data Warehouse</a></li>
                               <li><a href="icons.html">Partners</a></li>
 
                             </ul>
-                          </li>
+                          </li> -->
 
                           <!-- <li class="dropdown">
                             <a href="#">Pages <i class="icon-angle-down"></i></a>
