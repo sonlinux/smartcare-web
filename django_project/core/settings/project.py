@@ -30,20 +30,20 @@ SOUTH_TESTS_MIGRATE = False
 
 # Project specific javascript files to be pipelined
 # For third party libs like jquery should go in contrib.py
-PIPELINE_JS['project'] = {
-    'source_filenames': (
-        'js/smartcare.js',
-    ),
-    'output_filename': 'js/main.js',
-}
+# PIPELINE_JS['project'] = {
+#     'source_filenames': (
+#         'js/smartcare.js',
+#     ),
+#     'output_filename': 'js/main.js',
+# }
 
 # Project specific css files to be pipelined
 # For third party libs like bootstrap should go in contrib.py
-PIPELINE_CSS['project'] = {
-    'source_filenames': (
-    ),
-    'output_filename': 'css/style.css',
-    'extra_context': {
-        'media': 'screen, projection',
-    },
-}
+# PIPELINE_CSS['project'] = {
+#     'source_filenames': (
+#     ),
+#     'output_filename': 'css/style.css',
+#     'extra_context': {
+#         'media': 'screen, projection',
+#     },
+# }
