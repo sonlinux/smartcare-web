@@ -6,7 +6,7 @@
 <div class="container">
   <div class="span12">
     <div class="row" style="padding-top:20pt; padding left: -20pt">
-      <h5 class="heading"btn button-success""><b><i class="icon-folder-open-alt"></i> {{ story.title }}</b><span></span></h5>
+      <h5 class="heading" style="color: grey;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;"><b><i class="icon-folder-open-alt" ></i> {{ story.title }}</b><span></span></h5>
     </div>
   </div>
 
@@ -22,7 +22,7 @@
 
 
              <div class="span6">
-                         <h4>Header details</h4>
+               <h6 style="color: grey;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;" style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Header details</h6>
                          <dl class="dl-horizontal">
                            <dt>Authored by: </dt>
                            <dd>{{ story.author }}</dd>
@@ -39,9 +39,10 @@
            </div>
          </div>
 
-         <h4 style="padding-top:20pt">Story Content</h4>
+         <h4 style="padding-top:20pt" style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Story Content</h4>
          <span class="pullquote-right margintop10">
-        {{ story.content|safe }}          </span>
+            {{ story.content|safe }}
+        </span>
 
        </div>
        <div class="span6">
@@ -50,13 +51,13 @@
            <!-- start: Accordion -->
            <div class="row">
 
-             <img src="{% thumbnail story.photo 600x300 crop %}" class="img-rounded pull-right" alt="" style="padding-bottom: 10pt; margin-left: 10pt"/>
+             <img src="{% thumbnail story.photo 580x300 crop %}" class="img-rounded pull-right" alt="" style="padding-bottom: 10pt;"/>
          </div>
            <div class="accordion" id="accordion2">
              <div class="accordion-group">
                <div class="accordion-heading">
                  <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-           <i class="icon-minus"></i> Collapsible Group Item #1 </a>
+           <i class="icon-minus"></i> Main activty</a>
                </div>
                <div id="collapseOne" class="accordion-body collapse in">
                  <div class="accordion-inner">
@@ -69,7 +70,7 @@
              <div class="accordion-group">
                <div class="accordion-heading">
                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-           <i class="icon-plus"></i> Collapsible Group Item #2 </a>
+           <i class="icon-plus"></i> Highlighted topic </a>
                </div>
                <div id="collapseTwo" class="accordion-body collapse">
                  <div class="accordion-inner">
@@ -82,7 +83,7 @@
              <div class="accordion-group">
                <div class="accordion-heading">
                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-           <i class="icon-plus"></i> Collapsible Group Item #3 </a>
+           <i class="icon-plus"></i> Overral outcome </a>
                </div>
                <div id="collapseThree" class="accordion-body collapse">
                  <div class="accordion-inner">

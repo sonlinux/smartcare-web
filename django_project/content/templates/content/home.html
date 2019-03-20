@@ -8,11 +8,49 @@
   <div class="intro-content">
     <h5 style="color:white; font-weight:bold">SmartCare EHR <i class="icon-stethoscope" style="color:white; font-weight:bold"></i></h5>
     <p style="color:white">Where every life matters to us and we try saving it.</p>
-    <div style="margin-bottom: -160pt">
-      <a href="#" class="btn-get-started scrollto">Foreword by iDeas project Director</a>
+    <div style="margin-bottom: -40pt;">
+      <a href="#" class="btn-get-started scrollto" data-toggle="modal" data-target="#exampleModal">Foreword by iDeas project Director</a>
     </div>
+
   </div>
 </section>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <!-- <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> -->
+
+          <div class="pricing-box-plain">
+            <div class="heading">
+              <h4 class="modal-title" id="exampleModalLabel" style="color:grey">{{ foreword.title }}</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="desc">
+              <ul>
+                <p>
+                  {{ foreword.content|truncatechars:500|safe }}
+                </p>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p><i>{{ foreword.owner }}</i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 <!-- /section intro -->
 
 <section id="content">
@@ -105,14 +143,14 @@
         <div class="row">
           <div class="span12">
             <div class="aligncenter">
-              <h3>Our most recent works</h3>
+              <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Our most recent works</h3>
             </div>
           </div>
         </div>
 
         <div class="row">
           <div class="span3">
-            <h6>Are you wondering what SmartCare is?</h6>
+            <h6 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Are you wondering what SmartCare is?</h6>
             <p>
               Read about smartcare and find out what makes it a great platform in health.
             </p>

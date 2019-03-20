@@ -29,6 +29,9 @@ class HomeView(TemplateView):
         random_four = list(random.sample(partner_list, 5))
         context['partners'] = random_four
 
+        foreword_qs = Foreword.objects.get(active=True)
+        context['foreword'] = foreword_qs
+
         return context
 
 
