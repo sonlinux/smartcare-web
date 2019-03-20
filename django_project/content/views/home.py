@@ -26,7 +26,10 @@ class HomeView(TemplateView):
 
         partner_qs = Partner.objects.all()
         partner_list = list(partner_qs)
-        random_four = list(random.sample(partner_list, 5))
+        try:
+            random_four = list(random.sample(partner_list, 5))
+        except:
+            random_four = []
         context['partners'] = random_four
 
         foreword_qs = Foreword.objects.get(active=True)

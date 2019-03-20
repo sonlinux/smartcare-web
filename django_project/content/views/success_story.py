@@ -20,10 +20,12 @@ class SuccessStoryList(ListView):
         context = super(SuccessStoryList, self).get_context_data(**kwargs)
 
         success_qs = SuccessStory.objects.filter(published=True)
+        recent_success_qs = SuccessStory.objects.filter(published=True)[:5]
 
         category_qs = Category.objects.all()[:5]
         context['categories'] = category_qs
         context['success_stories'] = success_qs
+        context['recent_stories'] = recent_success_qs
 
         return context
 
