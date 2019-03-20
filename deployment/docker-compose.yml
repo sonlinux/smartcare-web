@@ -42,7 +42,7 @@ uwsgi:
     - DATABASE_PASSWORD=docker
     - DATABASE_HOST=db
     - DJANGO_SETTINGS_MODULE=core.settings.prod_docker
-    - VIRTUAL_HOST=smartcare.edited.com
+    - VIRTUAL_HOST=smartcare.brhc.com
     - VIRTUAL_PORT=8080
   volumes:
     - ../django_project:/home/web/django_project
