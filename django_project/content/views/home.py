@@ -31,8 +31,10 @@ class HomeView(TemplateView):
         except:
             random_four = []
         context['partners'] = random_four
-
-        foreword_qs = Foreword.objects.get(active=True)
+        try:
+            foreword_qs = Foreword.objects.get(active=True)
+        except:
+            foreword_qs = ''
         context['foreword'] = foreword_qs
 
         return context
@@ -43,8 +45,12 @@ class AboutUsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(AboutUsView, self).get_context_data(**kwargs)
-
-        aboutus_qs = AboutUs.objects.get(active=True)
+        try:
+            aboutus_qs = AboutUs.objects.get(active=True)
+            foreword_qs = Foreword.objects.get(active=True)
+        except:
+            aboutus_qs = ''
+            foreword_qs = ''
         foreword_qs = Foreword.objects.get(active=True)
         context['aboutus'] = aboutus_qs
         context['foreword'] = foreword_qs
