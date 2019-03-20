@@ -14,12 +14,20 @@ from .views.home import AboutUsView
 from .views.success_story import (
     SuccessStoryList,
     SuccessStoryDetail)
+from .views.under_development import UnderDevelopment
+from .views.download_smartcare import DownloadFile
 
 
 urlpatterns = [
     url(r'^$',
         HomeView.as_view(),
         name='home'),
+    url(r'^download/$',
+        DownloadFile.as_view(),
+        name='download'),
+    url(r'^under-development/$',
+        UnderDevelopment.as_view(),
+        name='under_development'),
     url(r'^about/$',
         AboutUsView.as_view(),
         name='about'),

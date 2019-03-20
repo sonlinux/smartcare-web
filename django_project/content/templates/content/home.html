@@ -159,15 +159,23 @@
           {% for recent in recent_stories %}
               <div class="span3">
                 <div class="pricing-box-plain">
-                  <div class="heading">
-                    <h6><small><b>{{ recent.title|truncatechars:27 }}</b></small></h6>
-                    <i>Published on: {{ recent.updated|date:"M, d, Y"}}</i>
+                  <div>
+                    <p><b>
+                      <a href="{% url 'content:success_detail' story_pk=recent.id %}">
+                        {{ recent.title }}
+                      </a>
+                      </b>
+                    </p>
+                    <i><small>Published on: {{ recent.updated|date:"M, d, Y"}}</small></i>
                   </div>
+
                   <div class="desc">
                     <ul>
-                      <blockquote cite="#">
+                      <p>
+                      <small>
                           {{ recent.content|truncatechars:64|safe }}
-                      </blockquote>
+                      </small>
+                      </p>
                     </ul>
                   </div>
                   <div class="action">
