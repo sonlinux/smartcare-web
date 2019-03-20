@@ -34,7 +34,7 @@ PIPELINE_JS['project'] = {
     'source_filenames': (
         'js/smartcare.js',
     ),
-    'output_filename': 'js/project.js',
+    'output_filename': 'js/main.js',
 }
 
 # Project specific css files to be pipelined
@@ -42,7 +42,7 @@ PIPELINE_JS['project'] = {
 PIPELINE_CSS['project'] = {
     'source_filenames': (
     ),
-    'output_filename': 'css/project.css',
+    'output_filename': 'css/style.css',
     'extra_context': {
         'media': 'screen, projection',
     },
