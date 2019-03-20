@@ -76,7 +76,7 @@
                   <div class="logo float-left">
                     {% load thumbnail %}
                     <div>
-                      <img src="{% static 'img/cdc.png' %}" class="img-rounded" height='200' width='150' style="image-rendering: crisp-edges;float:left; margin-bottom: -10pt; margin-top: -10pt;"/>
+                      <a href="/"><img src="{% static 'img/cdc.png' %}" class="img-rounded" height='200' width='150' style="image-rendering: crisp-edges;float:left; margin-bottom: -10pt; margin-top: -10pt;"/></a>
                     </div>
                   </div>
                 </div>
@@ -130,7 +130,7 @@
                             <a href="#"><i class="icon-cloud-download"></i> Changelog <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                               <li><a href="/under-development">SmartCare Release Notes  <i class="icon-lightbulb"></i></a></li>
-                              <li><a href="/under-development">Download SmartCare  <i class="icon-download"></i></a></li>
+                              <li><a href="{% url 'content:download'  %}">Download SmartCare  <i class="icon-download"></i></a></li>
                               <li><a href="/under-development">Extra Resources  <i class="icon-bell"></i></a></li>
                             </ul>
                           </li>
