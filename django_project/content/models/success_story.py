@@ -46,7 +46,7 @@ class SuccessStory(models.Model):
         null=True
     )
     photo_2 = models.ImageField(
-        _('Story Main Optional photo 2'),
+        _('Story Optional photo 2'),
         upload_to='success_stories/upload/%Y/%m/%d',
         blank=True,
         null=True
@@ -61,13 +61,6 @@ class SuccessStory(models.Model):
 
     photo_4 = models.ImageField(
         _('Story Optional photo 4'),
-        upload_to='success_stories/upload/%Y/%m/%d',
-        blank=True,
-        null=True
-    )
-
-    photo_5 = models.ImageField(
-        _('Story Optional photo 5'),
         upload_to='success_stories/upload/%Y/%m/%d',
         blank=True,
         null=True
