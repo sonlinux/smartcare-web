@@ -33,7 +33,41 @@ class SuccessStory(models.Model):
 
     content = RichTextField()
     photo = models.ImageField(
-        _('Story Image'),
+        _('Story Main Photo'),
+        upload_to='success_stories/upload/%Y/%m/%d',
+        null=True,
+        blank=True
+    )
+
+    photo_1 = models.ImageField(
+        _('Story Optional photo 1'),
+        upload_to='success_stories/upload/%Y/%m/%d',
+        blank=True,
+        null=True
+    )
+    photo_2 = models.ImageField(
+        _('Story Main Optional photo 2'),
+        upload_to='success_stories/upload/%Y/%m/%d',
+        blank=True,
+        null=True
+    )
+
+    photo_3 = models.ImageField(
+        _('Story Optional photo 3'),
+        upload_to='success_stories/upload/%Y/%m/%d',
+        blank=True,
+        null=True
+    )
+
+    photo_4 = models.ImageField(
+        _('Story Optional photo 4'),
+        upload_to='success_stories/upload/%Y/%m/%d',
+        blank=True,
+        null=True
+    )
+
+    photo_5 = models.ImageField(
+        _('Story Optional photo 5'),
         upload_to='success_stories/upload/%Y/%m/%d',
         blank=True,
         null=True

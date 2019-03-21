@@ -51,8 +51,41 @@
             <!-- <h4>Accordion</h4> -->
            <!-- start: Accordion -->
            <div class="row">
-
-             <img src="{% thumbnail story.photo 580x300 crop %}" class="img-rounded pull-right" alt="" style="padding-bottom: 10pt;"/>
+             <div id="wrapper">
+                <div class="preview">
+                    <div class="preview-pic tab-content">
+                      {% if story.photo %}
+                            <div class="tab-pane active"><a href="{% thumbnail story.photo 580x300 crop %}" data-lightbox="roadtrip"><img src="{% thumbnail story.photo 580x300 crop %}" style="padding-left: 20pt"/></a></div>
+                        {% else %}
+                            <div class="tab-pane active" id="pic-1"><img src="https://via.placeholder.com/580x300"/ style="padding-left: 20pt"></div>
+                        {% endif %}
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        {% if story.photo_1 %}
+                        <li class="active" style="padding-left: 20pt"><a href="{% thumbnail story.photo_1 850x850 crop %}" data-lightbox="roadtrip"><img src="{% thumbnail story.photo_1 100x40 crop %}"/></a></li>
+                        {% endif %}
+                        {% if story.photo_2 %}
+                          <li><a href="{% thumbnail story.photo_2 850x850 crop %}" data-lightbox="roadtrip"><img src="{% thumbnail story.photo_2 100x40 crop %}"/></a></li>
+                        {% endif %}
+                        {% if story.photo_3 %}
+                          <li><a href="{% thumbnail story.photo_3 850x850 crop %}" data-lightbox="roadtrip"><img src="{% thumbnail story.photo_3 100x40 crop %}"/></a></li>
+                        {% endif %}
+                        {% if story.photo_4 %}
+                          <li><a href="{% thumbnail story.photo_4 850x850 crop %}" data-lightbox="roadtrip"data-toggle="tab"><img src="{% thumbnail story.photo_4 100x40 crop %}"/></a></li>
+                        {% endif %}
+                        {% if story.photo_5 %}
+                          <li style="padding-left: 20pt"><a href="{% thumbnail story.photo_5 850x850 crop %}" data-lightbox="roadtrip" data-toggle="tab"><img src="{% thumbnail story.photo_5 100x30 crop %}" /></a></li>
+                        {% endif %}
+                    </ul>
+                    <!-- divider -->
+                    <div class="row">
+                      <div class="span12">
+                        <div class="solidline"></div>
+                      </div>
+                    </div>
+                    <!-- end divider -->
+                </div>
+             </div>
          </div>
            <div class="accordion" id="accordion2">
              <div class="accordion-group">
