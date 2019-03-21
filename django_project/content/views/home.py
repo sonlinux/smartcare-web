@@ -27,7 +27,7 @@ class HomeView(TemplateView):
         partner_qs = Partner.objects.all()
         partner_list = list(partner_qs)
         try:
-            random_four = list(random.sample(partner_list, 5))
+            random_four = list(random.sample(partner_list, len(partner_list)))
         except:
             random_four = []
         context['partners'] = random_four
