@@ -21,11 +21,13 @@ class Overview(models.Model):
        null=True,
        blank=True
         )
+    published = models.BooleanField(default=False)
     content = RichTextField(
             _("Content"),
         null=True,
         blank=True
         )
+    published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -45,6 +47,7 @@ class FunctionalModules(models.Model):
         null=True,
         blank=True
         )
+    published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -64,6 +67,7 @@ class TechnologyStack(models.Model):
         null=True,
         blank=True
         )
+    published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -83,6 +87,7 @@ class DevelopmentPipeline(models.Model):
         null=True,
         blank=True
         )
+    published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -102,6 +107,7 @@ class TechnicalUpdates(models.Model):
         null=True,
         blank=True
         )
+    published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -121,6 +127,7 @@ class Deployment(models.Model):
         null=True,
         blank=True
         )
+    published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -140,6 +147,7 @@ class Training(models.Model):
         null=True,
         blank=True
     )
+    published = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
