@@ -15,7 +15,15 @@
   </div>
 </section>
 
+  <style>
+      .modal-backdrop {
+          z-index: 100000 !important;
+        }
 
+     .modal {
+           z-index: 100001 !important;
+         }
+  </style>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -30,15 +38,17 @@
 
           <div class="pricing-box-plain">
             <div class="heading">
-              <h4 class="modal-title" id="exampleModalLabel" style="color:grey">{{ foreword.title }}</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
+                <h4 class="modal-title" id="exampleModalLabel" style="color:grey">{{ foreword.title }}</h4>
               </button>
             </div>
             <div class="desc">
               <ul>
+                <img class="img-circle center-block getSrc" src="{% thumbnail foreword.photo 400x400 crop %}" alt="IDeas project Director"></a>
                 <p>
                   {{ foreword.content|truncatechars:800|safe }}
+                      <!-- Button trigger modal -->
                 </p>
                 <p>
                   <b>
