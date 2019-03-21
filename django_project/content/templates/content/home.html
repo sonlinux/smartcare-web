@@ -114,16 +114,8 @@
           <div class="span2">
             <div class="box aligncenter">
               <div class="icon">
-                {% if partner.partner_type == "PT" %}
-                  <span class="badge badge-warning badge-circled"><i class="icon-heart-empty"></i></span>
-                {% endif %}
-                {% if partner.partner_type == "SP" %}
-                  <span class="badge badge-success badge-circled"><i class="icon-heart-empty"></i></span>
-                {% endif %}
-                {% if partner.partner_type == "OT" %}
-                  <span class="badge badge-info badge-circled"><i class="icon-heart-empty"></i></span>
-                {% endif %}
-                <a href="{{ partner.url }}" target="_blank"><img src="{% thumbnail partner.logo 172x60 crop %}" alt={{ partner.name|upper }}/></a>
+
+                <a href="{{ partner.url }}" target="_blank"><img src="{{ partner.logo.url }}" class="img-responsive img-rounded" height='150' width='172' alt={{ partner.name|upper }}/></a>
               </div>
             </div>
           </div>
@@ -172,7 +164,7 @@
                     <ul>
                       <p>
                       <small>
-                          {{ recent.content|truncatechars:64|safe }}
+                          {{ recent.content|truncatechars:240|safe }}
                       </small>
                       </p>
                     </ul>
