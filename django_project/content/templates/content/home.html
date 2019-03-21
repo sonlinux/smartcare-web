@@ -123,7 +123,7 @@
                 {% if partner.partner_type == "OT" %}
                   <span class="badge badge-info badge-circled"><i class="icon-heart-empty"></i></span>
                 {% endif %}
-                <a href="{{ partner.url }}" target="_blank"><img src="{% thumbnail partner.logo 172x60 crop %}" alt={{ partner.name|upper }}/></a>
+                <a href="{{ partner.url }}" target="_blank"><img src="{{ partner.logo.url }}" class="img-rounded" height='150' width='172' alt={{ partner.name|upper }}/></a>
               </div>
             </div>
           </div>
