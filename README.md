@@ -18,7 +18,7 @@ Story queue on Waffle:
 * [![Stories in Ready](https://badge.waffle.io/inasafe/inasafe.svg?label=ready&title=Ready)](http://waffle.io/inasafe/inasafe)
 * [![Stories in In Progress](https://badge.waffle.io/inasafe/inasafe.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/inasafe/inasafe)
 
-[![Throughput Graph](https://graphs.waffle.io/inasafe/inasafe/throughput.svg)](https://waffle.io/inasafe/inasafe/metrics)
+[![Throughput Graph](https://graphs.waffle.io/kartoza/django-bims/throughput.svg)](https://waffle.io/inasafe/inasafe/metrics)
 
 * Current test status master: [![Build Status](https://travis-ci.org/inasafe/inasafe.svg?branch=master)](https://travis-ci.org/inasafe/inasafe)
 
