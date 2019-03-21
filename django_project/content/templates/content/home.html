@@ -10,6 +10,11 @@
     <p style="color:white">Where every life matters to us and we try saving it.</p>
     <div style="margin-bottom: -40pt;">
       <a href="#" class="btn-get-started scrollto" data-toggle="modal" data-target="#exampleModal">Foreword by iDeas project Director</a>
+      <style>
+              a, a:hover, a:active, a:visited, a:focus {
+                            text-decoration:none;
+                        }
+      </style>
     </div>
 
   </div>
@@ -40,12 +45,12 @@
             <div class="heading">
               <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-                <h4 class="modal-title" id="exampleModalLabel" style="color:grey">{{ foreword.title }}</h4>
+                <h3 class="modal-title" id="exampleModalLabel">{{ foreword.title }}</h3>
               </button>
             </div>
             <div class="desc">
               <ul>
-                <p>
+                <p style="color:grey;">
                   {{ foreword.content|truncatechars:800|safe }}
                       <!-- Button trigger modal -->
                 </p>
