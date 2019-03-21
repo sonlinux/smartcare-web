@@ -138,13 +138,13 @@
                           <li class="dropdown">
                             <a href="#"><i class="icon-medkit"></i> SmartCare <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                              <li><a href="/under-development">Product Overview</a></li>
-                              <li><a href="/under-development">Functional Modules</a></li>
-                              <li><a href="/under-development">Technology Stack</a></li>
-                              <li><a href="/under-development">Development Pipeline</a></li>
-                              <li><a href="/under-development">Technical Updates</a></li>
-                              <li><a href="/under-development">Deployment</a></li>
-                              <li><a href="/under-development">Training</a></li>
+                              <li><a href="{% url 'content:overview' %}">Product Overview</a></li>
+                              <li><a href="{% url 'content:functional_modules' %}">Functional Modules</a></li>
+                              <li><a href="{% url 'content:technology_stack' %}">Technology Stack</a></li>
+                              <li><a href="{% url 'content:deployment_pipeline' %}">Development Pipeline</a></li>
+                              <!-- <li><a href="{% url 'content:technical_updates' %}">Technical Updates</a></li> -->
+                              <li><a href="{% url 'content:deployment' %}">Deployment</a></li>
+                              <li><a href="{% url 'content:training' %}">Training</a></li>
                             </ul>
                           </li>
                           <li>

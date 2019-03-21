@@ -8,7 +8,15 @@ from .models.category import Category
 from models.sponsors import Partner
 from .models.success_story import SuccessStory, Author
 from .models.carousel_headers import CarouselHeader
-
+from .models.smartcare import (
+    Overview,
+    FunctionalModules,
+    TechnologyStack,
+    DevelopmentPipeline,
+    TechnicalUpdates,
+    Deployment,
+    Training,
+    )
 
 class AboutUsAdmin(admin.ModelAdmin):
     list_display = ['title', 'created', 'updated', 'active']
@@ -42,7 +50,13 @@ admin.site.register(Partner, PartnerAdmin)
 admin.site.register(Category)
 admin.site.register(CarouselHeader)
 admin.site.register(Author)
-
+admin.site.register(Overview)
+admin.site.register(FunctionalModules)
+admin.site.register(TechnologyStack)
+admin.site.register(DevelopmentPipeline)
+admin.site.register(TechnicalUpdates)
+admin.site.register(Deployment)
+admin.site.register(Training)
 # class smartcareAdmin(admin.ModelAdmin):
 #     list_display = ['code', 'name', 'brand']
 #     search_fields = ['code', 'name', 'brancd']
