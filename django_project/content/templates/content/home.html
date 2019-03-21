@@ -40,6 +40,7 @@
                 <p>
                   {{ foreword.content|truncatechars:800|safe }}
                 </p>
+                <p><a href="/about"></a></p>
               </ul>
             </div>
           </div>
@@ -73,8 +74,8 @@
           data: {
               labels: ['Lusaka', 'Southern', 'Eastern', 'Northern', 'Copperbelt', 'Western'],
               datasets: [{
-                  label: '# of Votes',
-                  data: [12, 19, 3, 5, 2, 3],
+                  label: '# of Deployments',
+                  data: [120, 190, 30, 50, 20, 10],
                   backgroundColor: [
                       'rgba(255, 99, 132, 0.2)',
                       'rgba(54, 162, 235, 0.2)',
