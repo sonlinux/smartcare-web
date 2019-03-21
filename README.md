@@ -1,6 +1,6 @@
 
-smartcare
-============
+SmartCare 
+=========
 
 smartcare-website is a Django app powering the main website for smartcare 
 health system.
@@ -15,10 +15,10 @@ Project activity
 
 Story queue on Waffle:
 
-* [![Stories in Ready](https://badge.waffle.io/sonlinux/smartcare-web.svg?label=ready&title=Ready)](http://waffle.io/sonlinux/smartcare-web)
-* [![Stories in In Progress](https://badge.waffle.io/sonlinux/smartcare-web.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/sonlinux/smartcare-web)
+* [![Stories in Ready](https://badge.waffle.io/inasafe/inasafe.svg?label=ready&title=Ready)](http://waffle.io/inasafe/inasafe)
+* [![Stories in In Progress](https://badge.waffle.io/inasafe/inasafe.svg?label=in%20progress&title=In%20Progress)](http://waffle.io/inasafe/inasafe)
 
-[![Throughput Graph](https://graphs.waffle.io/djangojobportal/djp/throughput.svg)](https://waffle.io/djangojobportal/djp/metrics)
+[![Throughput Graph](https://graphs.waffle.io/inasafe/inasafe/throughput.svg)](https://waffle.io/inasafe/inasafe/metrics)
 
 * Current test status master: [![Build Status](https://travis-ci.org/inasafe/inasafe.svg?branch=master)](https://travis-ci.org/inasafe/inasafe)
 
@@ -90,4 +90,3 @@ Thank you to the individual contributors who have helped to build SmartCare
 website:
 
 * Alison Mukoma: AMukoma@brhc.com
-* Atupele Mboya: AMboya@brhc.com
