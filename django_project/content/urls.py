@@ -17,11 +17,49 @@ from .views.success_story import (
 from .views.under_development import UnderDevelopment
 from .views.download_smartcare import DownloadFile
 
+from .views.smartcare import (
+    OverviewView,
+    FunctionalModulesView,
+    TechnologyStackView,
+    DevelopmentPipelineView,
+    TechnicalUpdatesView,
+    DeploymentView,
+    TrainingView
+    )
 
 urlpatterns = [
     url(r'^$',
         HomeView.as_view(),
         name='home'),
+
+    url(r'^overview/$',
+        OverviewView.as_view(),
+        name='overview'),
+
+    url(r'^functional-modules$',
+        FunctionalModulesView.as_view(),
+        name='functional_modules'),
+
+    url(r'^technology-stack/$',
+        TechnologyStackView.as_view(),
+        name='technology_stack'),
+
+    url(r'^deployment-pipeline/$',
+        DevelopmentPipelineView.as_view(),
+        name='deployment_pipeline'),
+
+    url(r'^technical-updates/$',
+        TechnicalUpdatesView.as_view(),
+        name='technical_updates'),
+
+    url(r'^deployment$',
+        DeploymentView.as_view(),
+        name='deployment'),
+
+    url(r'^training/$',
+        TrainingView.as_view(),
+        name='training'),
+
     url(r'^download/$',
         DownloadFile.as_view(),
         name='download'),
