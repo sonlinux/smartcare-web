@@ -24,7 +24,7 @@ class HomeView(TemplateView):
         success_qs = SuccessStory.objects.filter(published=True)[:3]
         context['recent_stories'] = success_qs
 
-        partner_qs = Partner.objects.all()
+        partner_qs = Partner.objects.filter(partner_type="PT")
         partner_list = list(partner_qs)
         try:
             random_four = list(random.sample(partner_list, len(partner_list)))

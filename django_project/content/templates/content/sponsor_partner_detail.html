@@ -1,0 +1,141 @@
+{% extends "layouts.html" %}
+{% load staticfiles %}
+{% load thumbnail %}
+
+{% block content %}
+  <div id="wrapper">
+  <section id="inner-headline">
+    <div class="container">
+      <div class="row">
+        <div class="span4">
+          <div class="inner-heading">
+            <h2> Sponsors and Partners</h2>
+          </div>
+        </div>
+        <div class="span8">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
+            <li><a href="#">smartcare</a> <i class="icon-angle-right"></i></li>
+            <li class="active">Sponsors and Partners</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="content">
+    <div class="container">
+      <div class="row">
+
+        <div class="span9">
+          {% for org in orgs %}
+          <div class="post-entry">
+
+            {% if org.level == "GOLD" %}
+              <img class="img-circle pull-right" src="{% static 'img/gold.png' %}" height="50" width="50" style="margin-bottom:-30pt"/>
+            {% endif %}
+
+            {% if org.level == "SILVER" %}
+              <img class="img-circle pull-right" src="{% static 'img/silver.png' %}" height="50" width="50" style="margin-bottom:-30pt"/>
+            {% endif %}
+
+            {% if org.level == "BRONZE" %}
+              <img class="img-circle pull-right" src="{% static 'img/bronze.png' %}" height="50" width="50" style="margin-bottom:-30pt"/>
+            {% endif %}
+          <p style="font-size: 1.5em !important;">{{ org.name|upper }}</p>
+
+            <span class="pullquote-left">
+
+
+              <div class="row">
+                  <div class="span6">
+                    <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th>
+                            Type
+                          </th>
+                          <th>
+                            Start date - End date
+                          </th>
+                          <th>
+                            Country
+                          </th>
+                          <th>
+
+                          </th>
+                        </tr>
+                      </thead>
+
+
+                      <tbody>
+                        <tr>
+                          <td>
+                            {% if org.partner_type == "PT" %}
+                              Partner
+                            {% endif %}
+
+                            {% if org.partner_type == "SP" %}
+                              Sponsor
+                            {% endif %}
+                          </td>
+                          <td>
+                            {{ org.start_date }} - {{ org.end_date }}
+                          </td>
+                          <td>
+                            {{ org.country.name }}
+                          </td>
+                          <td>
+                            <a href="{{ org.url }}"><img class="img-responsive img-rounded pull-right" src="{% thumbnail org.logo 100x60 crop %}" style="margin-bottom:-30pt"/></a>
+                          </td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </div>
+              </div>
+              <p><u>website:</u> <small> <a href="{{ org.url }}" target="_blank">{{ org.url }}</a></small></p>
+
+
+            </span>
+            <article>
+              {{ orgs.content|safe|truncatechars:137 }}
+            </article>
+
+            <!-- <a href="#" class="btn btn-color"><i class="icon-tags"> {{ success.category }} |</i> Read more <i class="icon-angle-right"></i></a> -->
+          </div>
+          {% endfor %}
+
+        </div>  <!-- end span9 -->
+
+        <div class="span3">
+
+          <div class="clearfix"></div>
+            <aside class="right-sidebar">
+
+              <div class="widget">
+                <h6 class="widgetheading" style="color: black;font-weight: normal !important;font-size: 1.8em !important; margin-bottom: 30px;">Sponsorship stories<span></span></h6>
+                {% for story in sponsor_stories %}
+                  <article>
+                    <small><a href="{% url 'content:success_detail' story_pk=story.id %}">{{ story.title|truncatechars:85|title }}</a></small>
+                  </article>
+
+                  {% endfor %}
+              </div>
+            </aside>
+        </div>
+      </div>
+
+      <!-- divider -->
+      <div class="row">
+        <div class="span12">
+          <div class="solidline"></div>
+        </div>
+      </div>
+      <!-- end divider -->
+    </div>
+  </section>
+</div>
+
+{% endblock content %}

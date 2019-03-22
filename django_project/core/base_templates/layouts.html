@@ -79,7 +79,7 @@
                     {% load thumbnail %}
                     <div cass="nav logo">
                       <a href="/"><img src="{% static 'img/coa.png' %}" class="img-rounded" height='70' width='65' style="image-rendering: crisp-edges;float:left; margin-bottom: -50pt; margin-right: 40pt;margin-top: -10pt; background-blend-mode: screen;"/></a>
-                      <a href="/"><img src="{% static 'img/cdc.png' %}" class="img-circle" height='250' width='200' style=";image-rendering: crisp-edges; margin-bottom: -10pt;margin-left: 60pt; margin-top: -10pt; background-color: inherit; background-blend-mode: screen;"/></a>
+                      <a href="/"><img src="{% static 'img/cdc.png' %}" class="img-circle" height='200' width='150' style=";image-rendering: crisp-edges; margin-bottom: -10pt;margin-left: 60pt; margin-top: -2pt; background-color: inherit; background-blend-mode: screen;"/></a>
                     </div>
                   </div>
                 </div>
@@ -93,6 +93,9 @@
                           </li>
                           <li>
                             <a href="{% url 'content:success' %}"> Blog</a>
+                          </li>
+                          <li>
+                            <a href="{% url 'content:sponsorship' %}"> Sponsors & Partners</a>
                           </li>
                             <!-- <a href="#"> Blog<i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
@@ -133,14 +136,6 @@
                               <li><a href="post-right-sidebar.html">Post right sidebar</a></li>
                             </ul>
                           </li> -->
-                          <li class="dropdown">
-                            <a href="#"><i class="icon-cloud-download"></i> Changelog <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                              <li><a href="/under-development">SmartCare Release Notes  <i class="icon-lightbulb"></i></a></li>
-                              <li><a href="{% url 'content:download'  %}">Download SmartCare  <i class="icon-download"></i></a></li>
-                              <li><a href="/under-development">Extra Resources  <i class="icon-bell"></i></a></li>
-                            </ul>
-                          </li>
 
                           <li class="dropdown">
                             <a href="#"><i class="icon-medkit"></i> SmartCare <i class="icon-angle-down"></i></a>
@@ -150,10 +145,18 @@
                               <li><a href="{% url 'content:technology_stack' %}">Technology Stack</a></li>
                               <li><a href="{% url 'content:deployment_pipeline' %}">Development Pipeline</a></li>
                               <!-- <li><a href="{% url 'content:technical_updates' %}">Technical Updates</a></li> -->
-                              <li><a href="{% url 'content:deployment' %}">Deployment</a></li>
-                              <li><a href="{% url 'content:training' %}">Training</a></li>
                             </ul>
                           </li>
+
+                          <li class="dropdown">
+                            <a href="#"><i class="icon-cloud-download"></i> Versions <i class="icon-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                              <li><a href="/under-development">SmartCare Release Notes  <i class="icon-lightbulb"></i></a></li>
+                              <li><a href="{% url 'content:download'  %}">Download SmartCare  <i class="icon-download"></i></a></li>
+                              <li><a href="/under-development">Extra Resources  <i class="icon-bell"></i></a></li>
+                            </ul>
+                          </li>
+
                           <li>
                             <a href="/contact">Contact </a>
                           </li>

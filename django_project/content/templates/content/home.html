@@ -75,101 +75,56 @@
 <section id="content">
   <div class="container">
 
-    <div class="span3">
     <div class="row">
-      <div class="aligncenter">
-        <h6 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px; color:grey">SmartCare deployments Across Zambia</h6>
-      </div>
-
-      <!--Chart Placement[2]-->
-      <!-- <h4 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">DEPLOYED</h3> -->
-
-      <canvas id="myChart" width="50" height="50"></canvas>
-
-      <script>
-      var ctx = document.getElementById('myChart').getContext('2d');
-
-      var myChart = new Chart(ctx, {
-        // type: 'polarArea',
-            type: 'bar',
-          data: {
-              labels: ['Lusaka', 'Southern', 'Eastern', 'Northern', 'Copperbelt', 'Western'],
-              datasets: [{
-                  label: '# of Deployments',
-                  data: [120, 190, 30, 50, 20, 10],
-                  backgroundColor: [
-                      'rgba(255, 99, 132, 0.2)',
-                      'rgba(54, 162, 235, 0.2)',
-                      'rgba(255, 206, 86, 0.2)',
-                      'rgba(75, 192, 192, 0.2)',
-                      'rgba(153, 102, 255, 0.2)',
-                      'rgba(255, 159, 64, 0.2)'
-                  ],
-                  borderColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: ''
-      });
-      </script>
-
-
-
-        </div>
-    </div>
-    <div class="row">
-      <div class="span8">
-
-        <div class="aligncenter">
-          <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3>
-        </div>
-        <!-- style="color:#84c75b;"  -->
-        <div class="row">
-          {% for partner in partners %}
-          <div class="span2">
-            <div class="box aligncenter">
-              <div class="icon">
-
-                <a href="{{ partner.url }}" target="_blank"><img src="{{ partner.logo.url }}" class="img-responsive img-rounded" height='150' width='172' alt={{ partner.name|upper }}/></a>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="offer">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <div class="row">
-          <div class="span12">
+        <div class="span3">
             <div class="aligncenter">
-              <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Our most recent works</h3>
+              <h6 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px; color:grey">SmartCare deployments Across Zambia</h6>
             </div>
-          </div>
+
+            <canvas id="myChart" width="50" height="50"></canvas>
+
+            <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            var myChart = new Chart(ctx, {
+              type: 'polarArea',
+                  type: 'bar',
+                data: {
+                    labels: ['Lusaka', 'Southern', 'Eastern', 'Northern', 'Copperbelt', 'Western'],
+                    datasets: [{
+                        label: '# of Deployments',
+                        data: [120, 190, 30, 50, 20, 10],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: ''
+            });
+            </script>
         </div>
 
-        <div class="row">
-          <div class="span3">
-            <h6 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Are you wondering what SmartCare is?</h6>
-            <p>
-              Read about smartcare and find out what makes it a great platform in health.
-            </p>
-          </div>
+          <div class="span9">
+            <div class="aligncenter">
+              <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">RECENT STORIES</h3>
+            </div>
 
-          {% for recent in recent_stories %}
+        <div class="row">
+        {% for recent in recent_stories %}
               <div class="span3">
                 <div class="pricing-box-plain">
                   <div>
@@ -196,13 +151,57 @@
                   </div>
                 </div>
               </div>
-
           {% endfor %}
+        </div>
+
+
+
+        <!-- ==================== -->
+
+
+
+        <!-- ============= -->
+      </div>
+    </div>
+
+
+  </div>  <!-- ==close row wrapper=========== -->
+  <!-- </div> -->
+</section>
+
+
+
+<section id="offer">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+
+
+
+
+        <div class="row">
+          <div class="aligncenter">
+            <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3>
+          </div>
+          <!-- style="color:#84c75b;"  -->
+            {% for partner in partners %}
+            <div class="span2">
+              <div class="box aligncenter">
+                <div class="icon">
+
+                  <a href="{{ partner.url }}" target="_blank"><img src="{{ partner.logo.url }}" class="img-responsive img-rounded" height='150' width='172' alt={{ partner.name|upper }}/></a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
 
 
         </div>
 
       </div>
+
+
+
     </div>
 
   </div>
