@@ -1,7 +1,11 @@
 {% extends "layouts.html" %}
 {% load staticfiles %}
 {% load thumbnail %}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 {% block content %}
 <!-- section intro -->
 <section id="intro">
@@ -9,18 +13,44 @@
     <h5 style="color:white; font-weight:bold">SmartCare EHR <i class="icon-stethoscope" style="color:white; font-weight:bold"></i></h5>
     <p style="color:white">Where every life matters to us and we try saving it.</p>
     <div style="margin-bottom: -40pt;">
-      <a href="#" class="btn-get-started scrollto" data-toggle="modal" data-target="#exampleModal">Wondering what SmartCare is?</a>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
+        Wondering what SmartCare is?
+      </button>
+
       <style>
-              a, a:hover, a:active, a:visited, a:focus {
-                            text-decoration:none;
-                        }
+        button{
+              color: #84c75b;
+              }
+        a, a:hover, a:active, a:visited, a:focus {
+                    text-decoration:none;
+                  }
       </style>
     </div>
 
-  </div>
+</div>
 </section>
 
-  <style>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title center" id="exampleModalLongTitle" style="color:#A9A9A9">{{ summery.title|title }}</h5>
+      </div>
+      <div class="modal-body" style="color:#C0C0C0 background-color:silver">
+        {{ summery.content|safe|truncatechars:900 }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <style>
       .modal-backdrop {
           z-index: 100000 !important;
         }
@@ -28,46 +58,8 @@
      .modal {
            z-index: 100001 !important;
          }
+
   </style>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <!-- <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div> -->
-
-          <div class="pricing-box-plain">
-            <div class="heading">
-              <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                <h3 class="modal-title" id="exampleModalLabel">{{ foreword.title }}</h3>
-              </button>
-            </div>
-            <div class="desc">
-              <ul>
-                <p style="color:grey;">
-                  {{ foreword.content|truncatechars:800|safe }}
-                      <!-- Button trigger modal -->
-                </p>
-                <p>
-                  <b>
-                    <a href="/about" style="color:forestgreen"> Learn more</a>
-                  </b>
-                </p>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <p><i>{{ foreword.owner }}</i></p>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 <!-- /section intro -->
@@ -153,32 +145,16 @@
               </div>
           {% endfor %}
         </div>
-
-
-
-        <!-- ==================== -->
-
-
-
         <!-- ============= -->
       </div>
     </div>
-
-
   </div>  <!-- ==close row wrapper=========== -->
   <!-- </div> -->
 </section>
-
-
-
 <section id="offer">
   <div class="container">
     <div class="row">
       <div class="span12">
-
-
-
-
         <div class="row">
           <div class="aligncenter">
             <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3>
@@ -194,14 +170,8 @@
               </div>
             </div>
             {% endfor %}
-
-
         </div>
-
       </div>
-
-
-
     </div>
 
   </div>

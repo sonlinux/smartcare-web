@@ -16,6 +16,7 @@ from .models.smartcare import (
     TechnicalUpdates,
     Deployment,
     Training,
+    ProjectSummery,
     )
 
 class AboutUsAdmin(admin.ModelAdmin):
@@ -43,6 +44,16 @@ class PartnerAdmin(admin.ModelAdmin):
     list_display = ['name', 'created', 'partner_type', 'active']
 
 
+class ProjectSummeryAdmin(admin.ModelAdmin):
+    list_display = [
+        'title',
+        'published',
+        'active_on_site',
+        'created',
+        'updated']
+
+
+
 admin.site.register(AboutUs, AboutUsAdmin)
 admin.site.register(Foreword, ForewordAdmin)
 admin.site.register(SuccessStory, SuccessStoryAdmin)
@@ -57,6 +68,7 @@ admin.site.register(DevelopmentPipeline)
 admin.site.register(TechnicalUpdates)
 admin.site.register(Deployment)
 admin.site.register(Training)
+admin.site.register(ProjectSummery, ProjectSummeryAdmin)
 # class smartcareAdmin(admin.ModelAdmin):
 #     list_display = ['code', 'name', 'brand']
 #     search_fields = ['code', 'name', 'brancd']
