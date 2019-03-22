@@ -23,7 +23,7 @@ class Overview(models.Model):
         )
     published = models.BooleanField(default=False)
     content = RichTextField(
-            _("Content"),
+        _("Content"),
         null=True,
         blank=True
         )
@@ -151,5 +151,32 @@ class Training(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.title
+
+
+class ProjectSummery(models.Model):
+    title = models.CharField(
+        _('Summery Title'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    content = RichTextField(
+        _("What user will quickly read on home page summery about SmartCare"),
+        null=True,
+        blank=True
+        )
+    published = models.BooleanField(default=True)
+    active_on_site = models.BooleanField(
+        _('Is it the one you want to use on the home page?'),
+        default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Summery'
+        verbose_name_plural = 'Summeries'
+        ordering = ['created']
     def __str__(self):
         return self.title

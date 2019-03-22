@@ -22,6 +22,7 @@ INSTALLED_APPS += (
     'ckeditor_uploader', # for file upload
     'ordered_model',
     'disqus',
+    'django_countries',
 )
 
 DISQUS_API_KEY = 'FOOBARFOOBARFOOBARFOOBARFOOBARF'

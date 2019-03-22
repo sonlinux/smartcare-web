@@ -1,7 +1,11 @@
 {% extends "layouts.html" %}
 {% load staticfiles %}
 {% load thumbnail %}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 {% block content %}
 <!-- section intro -->
 <section id="intro">
@@ -9,18 +13,44 @@
     <h5 style="color:white; font-weight:bold">SmartCare EHR <i class="icon-stethoscope" style="color:white; font-weight:bold"></i></h5>
     <p style="color:white">Where every life matters to us and we try saving it.</p>
     <div style="margin-bottom: -40pt;">
-      <a href="#" class="btn-get-started scrollto" data-toggle="modal" data-target="#exampleModal">Wondering what SmartCare is?</a>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
+        Wondering what SmartCare is?
+      </button>
+
       <style>
-              a, a:hover, a:active, a:visited, a:focus {
-                            text-decoration:none;
-                        }
+        button{
+              color: #84c75b;
+              }
+        a, a:hover, a:active, a:visited, a:focus {
+                    text-decoration:none;
+                  }
       </style>
     </div>
 
-  </div>
+</div>
 </section>
 
-  <style>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title center" id="exampleModalLongTitle" style="color:#A9A9A9">{{ summery.title|title }}</h5>
+      </div>
+      <div class="modal-body" style="color:#C0C0C0 background-color:silver">
+        {{ summery.content|safe|truncatechars:900 }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ <style>
       .modal-backdrop {
           z-index: 100000 !important;
         }
@@ -28,46 +58,8 @@
      .modal {
            z-index: 100001 !important;
          }
+
   </style>
-
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <!-- <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel"></h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div> -->
-
-          <div class="pricing-box-plain">
-            <div class="heading">
-              <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                <h3 class="modal-title" id="exampleModalLabel">{{ foreword.title }}</h3>
-              </button>
-            </div>
-            <div class="desc">
-              <ul>
-                <p style="color:grey;">
-                  {{ foreword.content|truncatechars:800|safe }}
-                      <!-- Button trigger modal -->
-                </p>
-                <p>
-                  <b>
-                    <a href="/about" style="color:forestgreen"> Learn more</a>
-                  </b>
-                </p>
-              </ul>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <p><i>{{ foreword.owner }}</i></p>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 <!-- /section intro -->
@@ -75,101 +67,56 @@
 <section id="content">
   <div class="container">
 
-    <div class="span3">
     <div class="row">
-      <div class="aligncenter">
-        <h6 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px; color:grey">SmartCare deployments Across Zambia</h6>
-      </div>
-
-      <!--Chart Placement[2]-->
-      <!-- <h4 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">DEPLOYED</h3> -->
-
-      <canvas id="myChart" width="50" height="50"></canvas>
-
-      <script>
-      var ctx = document.getElementById('myChart').getContext('2d');
-
-      var myChart = new Chart(ctx, {
-        // type: 'polarArea',
-            type: 'bar',
-          data: {
-              labels: ['Lusaka', 'Southern', 'Eastern', 'Northern', 'Copperbelt', 'Western'],
-              datasets: [{
-                  label: '# of Deployments',
-                  data: [120, 190, 30, 50, 20, 10],
-                  backgroundColor: [
-                      'rgba(255, 99, 132, 0.2)',
-                      'rgba(54, 162, 235, 0.2)',
-                      'rgba(255, 206, 86, 0.2)',
-                      'rgba(75, 192, 192, 0.2)',
-                      'rgba(153, 102, 255, 0.2)',
-                      'rgba(255, 159, 64, 0.2)'
-                  ],
-                  borderColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)',
-                      'rgba(75, 192, 192, 1)',
-                      'rgba(153, 102, 255, 1)',
-                      'rgba(255, 159, 64, 1)'
-                  ],
-                  borderWidth: 1
-              }]
-          },
-          options: ''
-      });
-      </script>
-
-
-
-        </div>
-    </div>
-    <div class="row">
-      <div class="span8">
-
-        <div class="aligncenter">
-          <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3>
-        </div>
-        <!-- style="color:#84c75b;"  -->
-        <div class="row">
-          {% for partner in partners %}
-          <div class="span2">
-            <div class="box aligncenter">
-              <div class="icon">
-
-                <a href="{{ partner.url }}" target="_blank"><img src="{{ partner.logo.url }}" class="img-responsive img-rounded" height='150' width='172' alt={{ partner.name|upper }}/></a>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section id="offer">
-  <div class="container">
-    <div class="row">
-      <div class="span12">
-        <div class="row">
-          <div class="span12">
+        <div class="span3">
             <div class="aligncenter">
-              <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Our most recent works</h3>
+              <h6 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px; color:grey">SmartCare deployments Across Zambia</h6>
             </div>
-          </div>
+
+            <canvas id="myChart" width="50" height="50"></canvas>
+
+            <script>
+            var ctx = document.getElementById('myChart').getContext('2d');
+
+            var myChart = new Chart(ctx, {
+              type: 'polarArea',
+                  type: 'bar',
+                data: {
+                    labels: ['Lusaka', 'Southern', 'Eastern', 'Northern', 'Copperbelt', 'Western'],
+                    datasets: [{
+                        label: '# of Deployments',
+                        data: [120, 190, 30, 50, 20, 10],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: ''
+            });
+            </script>
         </div>
 
-        <div class="row">
-          <div class="span3">
-            <h6 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">Are you wondering what SmartCare is?</h6>
-            <p>
-              Read about smartcare and find out what makes it a great platform in health.
-            </p>
-          </div>
+          <div class="span9">
+            <div class="aligncenter">
+              <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">RECENT STORIES</h3>
+            </div>
 
-          {% for recent in recent_stories %}
+        <div class="row">
+        {% for recent in recent_stories %}
               <div class="span3">
                 <div class="pricing-box-plain">
                   <div>
@@ -196,12 +143,34 @@
                   </div>
                 </div>
               </div>
-
           {% endfor %}
-
-
         </div>
+        <!-- ============= -->
+      </div>
+    </div>
+  </div>  <!-- ==close row wrapper=========== -->
+  <!-- </div> -->
+</section>
+<section id="offer">
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="aligncenter">
+            <a href="/sponsors"><h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3></a>
+          </div>
+          <!-- style="color:#84c75b;"  -->
+            {% for partner in partners %}
+            <div class="span2">
+              <div class="box aligncenter">
+                <div class="icon">
 
+                  <a href="{{ partner.url }}" target="_blank"><img src="{{ partner.logo.url }}" class="img-responsive img-rounded" height='120' width='152' alt={{ partner.name|upper }}/></a>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
       </div>
     </div>
 

@@ -26,6 +26,8 @@ from .views.smartcare import (
     DeploymentView,
     TrainingView
     )
+from .views.sponsors import SponsorPartnerView
+
 
 urlpatterns = [
     url(r'^$',
@@ -35,6 +37,10 @@ urlpatterns = [
     url(r'^overview/$',
         OverviewView.as_view(),
         name='overview'),
+
+    url(r'^sponsors/$',
+        SponsorPartnerView.as_view(),
+        name='sponsorship'),
 
     url(r'^functional-modules$',
         FunctionalModulesView.as_view(),

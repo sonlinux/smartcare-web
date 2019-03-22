@@ -13,6 +13,7 @@ from django.views.generic import TemplateView
 from ..models.aboutus import AboutUs, Foreword
 from ..models.success_story import SuccessStory
 from ..models.sponsors import Partner
+from ..models.smartcare import ProjectSummery
 
 
 class HomeView(TemplateView):
@@ -24,18 +25,22 @@ class HomeView(TemplateView):
         success_qs = SuccessStory.objects.filter(published=True)[:3]
         context['recent_stories'] = success_qs
 
-        partner_qs = Partner.objects.all()
+        partner_qs = Partner.objects.filter(partner_type="PT")
         partner_list = list(partner_qs)
         try:
             random_four = list(random.sample(partner_list, len(partner_list)))
+            foreword_qs = Foreword.objects.get(active=True)
+            project_overview = ProjectSummery.objects.get(active_on_site=True)
+
         except:
             random_four = []
-        context['partners'] = random_four
-        try:
-            foreword_qs = Foreword.objects.get(active=True)
-        except:
+
             foreword_qs = ''
+            project_overview = ''
+
         context['foreword'] = foreword_qs
+        context['partners'] = random_four
+        context['summery'] = project_overview
 
         return context
 
