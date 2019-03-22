@@ -18,6 +18,7 @@
   <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <link href="{% static 'css/style.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
@@ -76,8 +77,9 @@
                 <div class="span4">
                   <div class="logo float-left">
                     {% load thumbnail %}
-                    <div>
-                      <a href="/"><img src="{% static 'img/cdc.png' %}" class="img-rounded" height='200' width='150' style="image-rendering: crisp-edges;float:left; margin-bottom: -10pt; margin-top: -10pt;"/></a>
+                    <div cass="nav logo">
+                      <a href="/"><img src="{% static 'img/coa.png' %}" class="img-rounded" height='70' width='65' style="image-rendering: crisp-edges;float:left; margin-bottom: -50pt; margin-right: 40pt;margin-top: -10pt; background-blend-mode: screen;"/></a>
+                      <a href="/"><img src="{% static 'img/cdc.png' %}" class="img-circle" height='250' width='200' style=";image-rendering: crisp-edges; margin-bottom: -10pt;margin-left: 60pt; margin-top: -10pt; background-color: inherit; background-blend-mode: screen;"/></a>
                     </div>
                   </div>
                 </div>
@@ -100,6 +102,10 @@
 
                             </ul>
                           </li> -->
+
+
+
+
 
                           <!-- <li class="dropdown">
                             <a href="#">Pages <i class="icon-angle-down"></i></a>
@@ -219,10 +225,10 @@
                 </div>
                 <div class="span4">
                   <div class="row">
-                  <div class="footer_logo">
+                  <!-- <div class="footer_logo"> -->
                     <!-- <img src="{% static 'img/brhc.png' %}" class="img-rounded" height='200' width='150' style="image-rendering: crisp-edges; padding-bottom: 10pt;padding-left: 100pt;padding-top: 25pt;"/> -->
-                    <img src="{% static 'img/coa.png' %}" class="img-rounded float-left" height='100' width='80' style="image-rendering: crisp-edges;float:right; margin-bottom: -10pt; padding-right: -20pt;"/>
-                    </div>
+                    <!-- <img src="{% static 'img/coa.png' %}" class="img-rounded float-left" height='100' width='80' style="image-rendering: crisp-edges;float:right; margin-bottom: -10pt; padding-right: -20pt;"/> -->
+                    <!-- </div> -->
                 </div>
                 </div>
               </div>
@@ -232,7 +238,7 @@
                 <div class="row">
                   <div class="span6">
                     <div class="copyright">
-                      <p style="font-size:12pt"><b><span>&copy; Ministry of Heath Zambia. All right reserved</span></b></p>
+                      <p style="font-size:12pt;"><span>&copy; <a href="http://www.moh.gov.zm/" target="_blank"> Ministry of Heath Zambia</a>. All right reserved</span></p>
                     </div>
 
                   </div>
@@ -245,7 +251,7 @@
                         Licensing information: https://bootstrapmade.com/license/
                         Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Remember
                       -->
-                      Made with <img src="{% static 'img/mwl.png' %}" height="15" width="15"/> by <a href="https://www.broadreachcorporation.com/">Broadreach Corperation</a>
+                      Powered <i class="fa fa-cog fa-spin" style="font-size:18px; color:#84c75b;"></i> by <a href="https://www.broadreachcorporation.com/" target="_blank"><span style="font-size: 12pt;">Broadreach Consulting</span></a>
                     </div>
                   </div>
                 </div>
