@@ -34,7 +34,6 @@ class HomeView(TemplateView):
 
         except:
             random_four = []
-
             foreword_qs = ''
             project_overview = ''
 

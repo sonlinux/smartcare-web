@@ -31,22 +31,31 @@
           {% for org in orgs %}
           <div class="post-entry">
 
-            {% if org.level == "GOLD" %}
-              <img class="img-circle pull-right" src="{% static 'img/gold.png' %}" height="50" width="50" style="margin-bottom:-30pt"/>
+            <span class="pull-right" style="padding-bottom: 30pt !important">
+            {% if org.active = True %}
+                  <div class="box pull-right">
+                     <div class="icon">
+                       <span class="badge badge-success badge-circled">active</span>
+                       <!-- <i class="ico icon-cut icon-2x"></i> -->
+                     </div>
+                     <!-- <div class="text">
+                       <h4><strong>Faster load</strong></h4>
+                     </div> -->
+                   </div>
             {% endif %}
 
-            {% if org.level == "SILVER" %}
-              <img class="img-circle pull-right" src="{% static 'img/silver.png' %}" height="50" width="50" style="margin-bottom:-30pt"/>
+            {% if org.active = False %}
+                  <div class="box">
+                      <div class="icon" >
+                        <span class="badge badge-warning badge-circled">not active</span>
+                        <!-- <i class="ico icon-rocket icon-2x"></i> -->
+                      </div>
+                    </div>
             {% endif %}
-
-            {% if org.level == "BRONZE" %}
-              <img class="img-circle pull-right" src="{% static 'img/bronze.png' %}" height="50" width="50" style="margin-bottom:-30pt"/>
-            {% endif %}
-          <p style="font-size: 1.5em !important;">{{ org.name|upper }}</p>
+            </span>
+            <p style="font-size: 1.5em !important;">{{ org.name|upper }}</p>
 
             <span class="pullquote-left">
-
-
               <div class="row">
                   <div class="span6">
                     <table class="table table-hover">
@@ -71,7 +80,7 @@
                       <tbody>
                         <tr>
                           <td>
-                            {% if org.partner_type == "PT" %}
+                            {% if org.active == "PT" %}
                               Partner
                             {% endif %}
 
