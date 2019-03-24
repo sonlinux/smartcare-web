@@ -9,6 +9,7 @@ from models.sponsors import Partner
 from .models.success_story import SuccessStory, Author
 from .models.carousel_headers import CarouselHeader
 from .models.smartcare import (
+    Hub,
     Overview,
     FunctionalModules,
     TechnologyStack,
@@ -53,6 +54,10 @@ class ProjectSummeryAdmin(admin.ModelAdmin):
         'updated']
 
 
+class HubAdmin(admin.ModelAdmin):
+    list_display = ['name', 'created', 'published']
+
+
 
 admin.site.register(AboutUs, AboutUsAdmin)
 admin.site.register(Foreword, ForewordAdmin)
@@ -69,6 +74,8 @@ admin.site.register(TechnicalUpdates)
 admin.site.register(Deployment)
 admin.site.register(Training)
 admin.site.register(ProjectSummery, ProjectSummeryAdmin)
+admin.site.register(Hub, HubAdmin)
+
 # class smartcareAdmin(admin.ModelAdmin):
 #     list_display = ['code', 'name', 'brand']
 #     search_fields = ['code', 'name', 'brancd']

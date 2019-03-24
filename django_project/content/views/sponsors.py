@@ -9,8 +9,7 @@ __license__ = ''
 __copyright__ = 'Broadreach Corperation'
 
 
-from ..models.success_story import SuccessStory
-from ..models.category import Category
+from ..models.smartcare import Hub
 
 from django.views.generic import TemplateView
 
@@ -22,13 +21,13 @@ class SponsorPartnerView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(SponsorPartnerView, self).get_context_data(**kwargs)
         try:
-            sponsorship_stories_qs = SuccessStory.objects.filter(published=True)[:4]
+            hubs_qs = Hub.objects.filter(published=True)
             orgnanisation_qs = Partner.objects.all()
         except:
-            sponsorship_stories_qs = ''
+            hubs_qs = ''
             orgnanisation_qs = ''
 
-        context['sponsor_stories'] = sponsorship_stories_qs
+        context['hubs'] = hubs_qs
         context['orgs'] = orgnanisation_qs
 
         return context

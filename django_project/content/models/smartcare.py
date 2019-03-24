@@ -180,3 +180,28 @@ class ProjectSummery(models.Model):
         ordering = ['created']
     def __str__(self):
         return self.title
+
+
+
+class Hub(models.Model):
+    name = models.CharField(
+        _('Hub Name'),
+        max_length=255,
+        null=True,
+        blank=True
+    )
+    content = RichTextField(
+        _("Details about this Hub that you want to share with public."),
+        null=True,
+        blank=True
+        )
+    published = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Hub'
+        verbose_name_plural = 'Hubs'
+        ordering = ['-created']
+    def __str__(self):
+        return self.name
