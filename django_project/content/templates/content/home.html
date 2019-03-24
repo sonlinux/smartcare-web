@@ -145,7 +145,29 @@
       <div class="span12">
         <div class="row">
           <div class="aligncenter">
-            <a href="/sponsors"><h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3></a>
+            <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">SPONSORS</h3>
+          </div>
+          <!-- style="color:#84c75b;"  -->
+            {% for partner in sponsors %}
+            <div class="span2">
+              <div class="box aligncenter">
+                <div class="icon">
+                  <img src="{{ partner.logo.url }}" class="img-responsive img-rounded" height='120' width='152' alt="{{ partner.name|upper }}"/>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="aligncenter">
+            <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3>
           </div>
           <!-- style="color:#84c75b;"  -->
             {% for partner in partners %}

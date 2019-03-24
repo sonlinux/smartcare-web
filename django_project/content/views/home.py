@@ -26,19 +26,26 @@ class HomeView(TemplateView):
         context['recent_stories'] = success_qs
 
         partner_qs = Partner.objects.filter(partner_type="PT")
+        sponsor_qs = Partner.objects.filter(partner_type="SP")
         partner_list = list(partner_qs)
+        sponsor_list = list(sponsor_qs)
         try:
-            random_four = list(random.sample(partner_list, len(partner_list)))
+            random_partners = list(random.sample(partner_list,
+                                               len(partner_list)))
+            random_sponsors = list(random.sample(sponsor_list,
+                                               len(sponsor_list)))
             foreword_qs = Foreword.objects.get(active=True)
             project_overview = ProjectSummery.objects.get(active_on_site=True)
 
         except:
-            random_four = []
+            random_partners = []
+            random_sponsors = []
             foreword_qs = ''
             project_overview = ''
 
         context['foreword'] = foreword_qs
-        context['partners'] = random_four
+        context['partners'] = random_partners
+        context['sponsors'] = random_sponsors
         context['summery'] = project_overview
 
         return context
