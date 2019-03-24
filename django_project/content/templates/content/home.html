@@ -11,10 +11,10 @@
 <section id="intro">
   <div class="intro-content">
     <h5 style="color:white; font-weight:bold">SmartCare EHR <i class="icon-stethoscope" style="color:white; font-weight:bold"></i></h5>
-    <p style="color:white">Where every life matters to us and we try saving it.</p>
+    <p style="color:white">Working towards improving health for all</p>
     <div style="margin-bottom: -40pt;">
       <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModalLong">
-        Wondering what SmartCare is?
+        Wondering what SmartCare is all about?
       </button>
 
       <style>
@@ -100,7 +100,7 @@
 
           <div class="span9">
             <div class="aligncenter">
-              <h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">RECENT STORIES</h3>
+              <h3 style="color: black;font-weight: normal !important;font-size: 2.3em !important; margin-bottom: 30px;">RECENT STORIES</h3>
             </div>
 
         <div class="row">
@@ -145,7 +145,29 @@
       <div class="span12">
         <div class="row">
           <div class="aligncenter">
-            <a href="/sponsors"><h3 style="color: black;font-weight: normal !important;font-size: 2.4em !important; margin-bottom: 30px;">PARTNERS</h3></a>
+            <h3 style="color: black;font-weight: normal !important;font-size: 2.2em !important; margin-bottom: 30px;">SPONSORS</h3>
+          </div>
+          <!-- style="color:#84c75b;"  -->
+            {% for partner in sponsors %}
+            <div class="span2">
+              <div class="box aligncenter">
+                <div class="icon">
+                  <img src="{{ partner.logo.url }}" class="img-responsive img-rounded" height='120' width='152' alt="{{ partner.name|upper }}"/>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div class="span12">
+        <div class="row">
+          <div class="aligncenter">
+            <h3 style="color: black;font-weight: normal !important;font-size: 1.8em !important; margin-bottom: 30px;">PARTNERS</h3>
           </div>
           <!-- style="color:#84c75b;"  -->
             {% for partner in partners %}
