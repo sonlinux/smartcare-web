@@ -156,7 +156,6 @@
                               <li><a href="/under-development">Extra Resources  <i class="icon-bell"></i></a></li>
                             </ul>
                           </li>
-
                           <li>
                             <a href="/contact">Contact </a>
                           </li>
@@ -166,6 +165,7 @@
                             <ul class="dropdown-menu">
 
                                 {%  if request.user.is_authenticated and request.user.is_staff %}
+                                    <li><a href="/tracking/">Site tracking statistics</a></li>
                                       <li><a href="/site-admin">Admin</a></li>
                                       <li><a href="/accounts/logout/">Logout</a></li>
                                     {% elif request.user.is_authenticated %}

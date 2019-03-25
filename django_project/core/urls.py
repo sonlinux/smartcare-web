@@ -38,6 +38,7 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^site-admin/', include(admin.site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^tracking/', include('tracking.urls')),
     url(r'^accounts/', include('allauth.urls')),
 ]
 
