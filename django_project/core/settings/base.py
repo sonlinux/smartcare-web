@@ -109,6 +109,8 @@ TEMPLATES = [
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
+    # Needed by django tracking
+    'tracking.middleware.VisitorTrackingMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',

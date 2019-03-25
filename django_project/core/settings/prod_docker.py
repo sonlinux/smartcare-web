@@ -5,6 +5,8 @@ from .prod import *  # noqa
 import os
 print os.environ
 
+# sonlinux debug in prod
+
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']

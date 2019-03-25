@@ -22,6 +22,8 @@ PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
 USE_X_FORWARDED_HOST = True
 
 # Set debug to false for production
+
+# sonlinux debug in prod
 DEBUG = TEMPLATE_DEBUG = False
 
 SERVER_EMAIL = 'mukomalison@gmail.com'

@@ -9,7 +9,7 @@ from django.conf.urls.static import static
 from django.http import HttpResponseServerError
 from django.template import loader, Context
 from rest_framework_swagger.views import get_swagger_view
-
+from contactus import urls as contact_urls
 
 admin.autodiscover()
 handler404 = 'base.viewsets.error_views.custom_404'
@@ -33,12 +33,17 @@ def handler500(request):
     })))
 
 urlpatterns = [
-    url(r'^', include('content.urls')),
-    url('^contact/', include('contactus.urls')),
+    url(r'^', include('content.urls', namespace='content')),
+    url('^contact/', include(contact_urls)),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^site-admin/', include(admin.site.urls)),
     url(r'^grappelli/', include('grappelli.urls')),
+    url(r'^tracking/', include('tracking.urls')),
     url(r'^accounts/', include('allauth.urls')),
 ]
+
+admin.site.site_header = 'SmartCare website Admin'
+admin.site.site_title = 'SmartCare website Admin'
 
 if settings.DEBUG:
     urlpatterns += static(

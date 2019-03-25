@@ -2804,5 +2804,10 @@ ul.the-icons {
 }
 
 
-
+h1, h2, h3, h4, h5, h6 {
+	style="color: grey;
+	font-weight: normal !important;
+	font-size: 2.4em !important;
+	margin-bottom: 30px;"
+}
 /* Theme Styler :: End */

@@ -18,7 +18,15 @@ INSTALLED_APPS += (
     'rest_framework_swagger',
     'crispy_forms',
     'contactus',
+    'ckeditor',
+    'ckeditor_uploader', # for file upload
+    'ordered_model',
+    'disqus',
+    'django_countries',
 )
+
+DISQUS_API_KEY = 'FOOBARFOOBARFOOBARFOOBARFOOBARF'
+DISQUS_WEBSITE_SHORTNAME = 'smartcare'
 
 # REST_FRAMEWORK = {
 #     # Use Django's standard `django.contrib.auth` permissions,
@@ -128,4 +136,22 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_SIGNUP_FORM_CLASS = 'base.forms.SignupForm'
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+LOGIN_REDIRECT_URL = "/"
 CONTACT_US_EMAIL = 'mukomalison@gmail.com'
+
+CKEDITOR_UPLOAD_PATH = "media/uploads"
+
+# DJANGO TRACKING CONFIGS
+
+INSTALLED_APPS += (
+    'tracking',
+)
+
+TRACK_PAGEVIEWS = True
+TRACK_QUERY_STRING = True

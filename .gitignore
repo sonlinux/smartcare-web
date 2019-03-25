@@ -116,10 +116,10 @@ django_project/media
 deployment/backups
 
 # We should never version the btsync keys
-deployment/btsync-media.env
-deployment/btsync-db.env
+#deployment/btsync-media.env
+#deployment/btsync-db.env
 deployment/btsync-db.env.PRODUCTION
 deployment/btsync-media.env.PRODUCTION
 # These don't get versioned since they are generated on the fly
-deployment/docker/Dockerfile-prod
+#deployment/docker/Dockerfile-prod
 deployment/docker/smartcare-client.tar.gz
