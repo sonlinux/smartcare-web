@@ -146,3 +146,12 @@ LOGIN_REDIRECT_URL = "/"
 CONTACT_US_EMAIL = 'mukomalison@gmail.com'
 
 CKEDITOR_UPLOAD_PATH = "media/uploads"
+
+# DJANGO TRACKING CONFIGS
+
+INSTALLED_APPS += (
+    'tracking',
+)
+
+TRACK_PAGEVIEWS = True
+TRACK_QUERY_STRING = True
