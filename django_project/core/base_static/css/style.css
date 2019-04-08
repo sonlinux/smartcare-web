@@ -136,7 +136,9 @@ img.img-polaroid {
 
 /* --- header -- */
 header{
-	background: url(../img/header-pattern-150.png) repeat;
+	/*background: url(../img/header-pattern-150.png) repeat;*/
+	/* background-color: #6d8764; */
+    background-color: #647C64;
 	margin:0;
 	padding:0 0 20px;
 	position:relative;
@@ -146,7 +148,8 @@ header{
 header .top {
 	padding:10px 0 10px;
 	margin:0 0 30px;
-	background: url(../img/top-pattern-150.png) repeat;
+    background-color: #567C73;
+	/* background: url(../img/top-pattern-150.png) repeat; */
 -webkit-box-shadow: 0 4px 4px -2px #222;
    -moz-box-shadow: 0 4px 4px -2px #222;
         box-shadow: 0 4px 4px -2px #222;
@@ -231,6 +234,7 @@ header ul.nav li a {
 .navbar .nav > li > a {
 	font-size:13px;
   color: #fdfdfd;
+
   text-shadow: none;
 }
 
@@ -1983,7 +1987,8 @@ ul.time-post li.time{
 footer{
 	padding:50px 0 0 0;
 	color:#bbb;
-	background: url(../img/header-pattern-150.png) repeat;
+	/* background: url(../img/header-pattern-150.png) repeat; */
+	background-color: #6d8764;
 }
 
 footer a {
@@ -2040,7 +2045,8 @@ footer h5 a:hover, footer a:hover {
 
 
 #sub-footer{
-	background: url(../img/top-pattern-150.png) repeat;
+	/* background: url(../img/top-pattern-150.png) repeat; */
+	background-color: #567C73;
 	text-shadow:none;
 	color:#ddd;
 	padding:0;
@@ -2392,7 +2398,8 @@ ul.the-icons {
       display: block;
 	  width:100%;
 	  margin-top:0;
-	  color:#111;
+	  /*color:#111;*/
+      color: #567C73;
 	  margin-right:20px;
 	  line-height:30px;
 		font-size:13px;
@@ -2462,7 +2469,8 @@ ul.the-icons {
 	  width:100%;
 	  float:left;
 	  margin-bottom:20px;
-	  color:#111;
+	  /*color:#111;*/
+      color: #567C73;
 	  margin-right:20px;
 	  line-height:30px;
 		font-size:13px;
