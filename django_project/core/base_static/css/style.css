@@ -2819,3 +2819,66 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 30px;"
 }
 /* Theme Styler :: End */
+
+
+
+/*custom carousel header*/
+
+
+@media only screen and (max-width: 600px) {
+    .title-header-buttons div {
+        margin-top: 200px
+    }
+    .carousel-title {
+        display: none !important;
+    }
+}
+
+
+
+.login-carousel {
+    margin-top: 250px !important;
+}
+
+#carouselIndicators {
+    width: 100%;
+    position: relative;
+    height: 400px;
+    overflow-y: hidden;
+}
+
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+
+
+
+.carousel-item {
+	transition: -webkit-transform 500ms ease;
+	transition: transform 500ms ease !important;
+	-webkit-backface-visibility: visible;
+	        backface-visibility: visible;
+}
+
+
+.carousel-title {
+    margin-top: -30px;
+    height: 100%;
+    padding-left: 100px;
+    padding-right: 100px;
+    font-size: 30px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5)
+}
+
+.carousel-inner, .carousel-item {
+    height: 100%;
+}
