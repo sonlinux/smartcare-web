@@ -14,6 +14,7 @@ from ..models.aboutus import AboutUs, Foreword
 from ..models.success_story import SuccessStory
 from ..models.sponsors import Partner
 from ..models.smartcare import ProjectSummery
+from ..models.carousel_headers import CarouselHeader
 
 
 class HomeView(TemplateView):
@@ -47,6 +48,14 @@ class HomeView(TemplateView):
         context['partners'] = random_partners
         context['sponsors'] = random_sponsors
         context['summery'] = project_overview
+
+        carousel_headers = CarouselHeader.objects.all()
+        context['headers'] = []
+        for header in carousel_headers:
+            context['headers'].append({
+                'file': header.banner,
+                'description': header.description
+            })
 
         return context
 
