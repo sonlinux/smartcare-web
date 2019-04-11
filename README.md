@@ -89,4 +89,4 @@ _________
 Thank you to the individual contributors who have helped to build SmartCare 
 website:
 
-* Alison Mukoma: AMukoma@brhc.com
+* Alison Mukoma: AMukoma@brhc.com ( project lead )
