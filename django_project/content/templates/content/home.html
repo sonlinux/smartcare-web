@@ -159,6 +159,42 @@
 </section>
 
 
+    <section id="content">
+      <div class="container">
+
+        <div class="row team">
+          <div class="span12 pull-right">
+            <h3 style="padding-left: 40%; color: black;font-weight: normal !important;font-size: 1.8em !important; margin-bottom: 30px;">MEET THE TEAM</h3>
+          </div>
+
+          {% for member in team %}
+          
+          <div class="span3">
+            <div class="team-box">
+              <a href="#" class="thumbnail"><img src="{% thumbnail member.photo 220x235 crop %}" alt="" /></a>
+              <div class="roles aligncenter">
+                <p class="lead"><strong>V{{ member.name|title }}</strong></p>
+                <p>
+                  {% if member.title %}{{ member.title }}{% endif %}
+                </p>
+                <p>
+                  <a href="{{ member.facebook }}"><i class="icon-facebook icon-circled icon-bglight active"></i></a>
+                  <a href="{{ member.twitter }}"><i class="icon-twitter icon-circled icon-bglight active"></i></a>
+                  <a href="{{ member.linkedin }}"><i class="icon-linkedin icon-circled icon-bglight active"></i></a>
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+          
+        </div>
+
+      </div>
+    </section>
+
+
 <!-- Modal -->
 <!-- <div class="container"> -->
 <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

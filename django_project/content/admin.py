@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from .models.aboutus import (
     AboutUs,
-    Foreword)
+    Foreword,
+    Team)
 
 from .models.category import Category
 from models.sponsors import Partner
@@ -58,6 +59,8 @@ class HubAdmin(admin.ModelAdmin):
     list_display = ['name', 'created', 'published']
 
 
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ['name', 'title', 'created', 'is_active']
 
 admin.site.register(AboutUs, AboutUsAdmin)
 admin.site.register(Foreword, ForewordAdmin)
@@ -75,7 +78,7 @@ admin.site.register(Deployment)
 admin.site.register(Training)
 admin.site.register(ProjectSummery, ProjectSummeryAdmin)
 admin.site.register(Hub, HubAdmin)
-
+admin.site.register(Team, TeamAdmin)
 # class smartcareAdmin(admin.ModelAdmin):
 #     list_display = ['code', 'name', 'brand']
 #     search_fields = ['code', 'name', 'brancd']

@@ -94,3 +94,56 @@ class smartcare(models.Model):
 
     def __str__(self):
         return self.name
+
+class Team(models.Model):
+
+    name = models.CharField(
+            _("Member Name"),
+            max_length=350,
+            null=True,
+            blank=True,
+    )
+
+    title = models.CharField(
+        _("Title/Position"),
+        max_length=350,
+        null=True,
+        blank=True
+    )
+
+    content = RichTextField(default='')
+
+    photo = models.ImageField(
+        _('Picture'),
+        upload_to='team_pics/',
+        blank=True,
+        null=True
+    )
+    
+    facebook = models.CharField(
+        _("Facebook URL"),
+        max_length=350,
+        null=True,
+        blank=True,
+    )
+
+    twitter = models.CharField(
+        _("Twitter URL"),
+        max_length=350,
+        null=True,
+        blank=True,
+    )
+
+    linkedin = models.CharField(
+        _("Linkedin Profile"),
+        max_length=350,
+        null=True,
+        blank=True,
+    )
+    
+    is_active = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
