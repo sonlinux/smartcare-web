@@ -10,7 +10,7 @@ __copyright__ = 'Broadreach Corperation'
 import random
 from django.views.generic import TemplateView
 
-from ..models.aboutus import AboutUs, Foreword
+from ..models.aboutus import AboutUs, Foreword, Team
 from ..models.success_story import SuccessStory
 from ..models.sponsors import Partner
 from ..models.smartcare import ProjectSummery
@@ -36,6 +36,7 @@ class HomeView(TemplateView):
             random_sponsors = list(random.sample(sponsor_list,
                                                len(sponsor_list)))
             foreword_qs = Foreword.objects.get(active=True)
+            team = Team.objects.filter(is_active=True)
             project_overview = ProjectSummery.objects.get(active_on_site=True)
 
         except:
@@ -43,11 +44,13 @@ class HomeView(TemplateView):
             random_sponsors = []
             foreword_qs = ''
             project_overview = ''
+            team = ''
 
         context['foreword'] = foreword_qs
         context['partners'] = random_partners
         context['sponsors'] = random_sponsors
         context['summery'] = project_overview
+        context['team'] = team
 
         carousel_headers = CarouselHeader.objects.all()
         context['headers'] = []

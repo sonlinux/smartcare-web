@@ -27,12 +27,17 @@ from .views.smartcare import (
     TrainingView
     )
 from .views.sponsors import SponsorPartnerView
+from .views.portfolio import PortfolioListingView
 
 
 urlpatterns = [
     url(r'^$',
         HomeView.as_view(),
         name='home'),
+
+    # url(r'^portfolio/$',
+    #     PortfolioListingView.as_view(),
+    #     name='portfolio'),
 
     url(r'^overview/$',
         OverviewView.as_view(),
