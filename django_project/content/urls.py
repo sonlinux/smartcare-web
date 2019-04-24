@@ -24,7 +24,8 @@ from .views.smartcare import (
     DevelopmentPipelineView,
     TechnicalUpdatesView,
     DeploymentView,
-    TrainingView
+    TrainingView,
+    ChangelogEntry
     )
 from .views.sponsors import SponsorPartnerView
 from .views.portfolio import PortfolioListingView
@@ -59,9 +60,9 @@ urlpatterns = [
         DevelopmentPipelineView.as_view(),
         name='deployment_pipeline'),
 
-    url(r'^technical-updates/$',
-        TechnicalUpdatesView.as_view(),
-        name='technical_updates'),
+    url(r'^sc-versions/$',
+        ChangelogEntry.as_view(),
+        name='changes'),
 
     url(r'^deployment$',
         DeploymentView.as_view(),

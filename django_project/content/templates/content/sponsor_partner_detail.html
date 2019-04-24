@@ -127,12 +127,8 @@
                 <h6 class="widgetheading" style="color: black;font-weight: normal !important;font-size: 1.8em !important; margin-bottom: 30px;">Hubs<span></span></h6>
 
 
-
-
-
-                <div class="accordion" id="accordion2">
-
                   {% for hub in hubs %}
+                  <div class="accordion" id="accordion2">
                       <div class="accordion-group">
                         <div class="accordion-heading">
                           <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#{{ hub.name|slice:":4" }}">

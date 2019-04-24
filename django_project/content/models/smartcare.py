@@ -205,3 +205,23 @@ class Hub(models.Model):
         ordering = ['-created']
     def __str__(self):
         return self.name
+
+
+class Changes(models.Model):
+    title = models.CharField(
+       _('Title'),
+       max_length=255,
+       null=True,
+       blank=True
+        )
+    content = RichTextField(
+        _("Release Notes"),
+        null=True,
+        blank=True
+        )
+    published = models.BooleanField(default=False)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title

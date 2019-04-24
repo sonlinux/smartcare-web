@@ -17,6 +17,7 @@ from ..models.smartcare import (
     TechnicalUpdates,
     Deployment,
     Training,
+    Changes
     )
 
 class OverviewView(TemplateView):
@@ -118,5 +119,18 @@ class TrainingView(TemplateView):
         except:
             qs = ''
         context['training'] = qs
+
+        return context
+
+class ChangelogEntry(TemplateView):
+    template_name = "content/changes.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(ChangelogEntry, self).get_context_data(**kwargs)
+        try:
+            qs = Changes.objects.filter(published=True)
+        except:
+            qs = ''
+        context['changelog_entries'] = qs
 
         return context

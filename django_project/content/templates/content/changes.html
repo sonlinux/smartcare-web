@@ -1,0 +1,131 @@
+{% extends "layouts.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+  <div id="wrapper">
+  <section id="inner-headline">
+    <div class="container">
+      <div class="row">
+        <div class="span6">
+          <div class="inner-heading">
+            <h2> Smartcare Version Notes</h2>
+          </div>
+        </div>
+        <div class="span4">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a> <i class="icon-angle-right"></i></li>
+            <li><a href="#">smartcare</a> <i class="icon-angle-right"></i></li>
+            <li class="active">versions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="content">
+    <div class="container">
+      <div class="row">
+
+        <div class="span5">
+
+          <div class="post-entry">
+
+
+
+
+
+            <div class="span5">
+
+              <p class="lead" style="color:green"><b>Build Instructions</b></p>
+
+              <div class="tabbable tabs-right">
+
+                <ul class="nav nav-tabs">
+                  <li class="active"><a href="#first" data-toggle="tab"><i class="icon-briefcase"></i> Step One</a></li>
+                  <li><a href="#second" data-toggle="tab"><i class="icon-briefcase"></i> Step Two</a></li>
+                  <li><a href="#third" data-toggle="tab"><i class="icon-briefcase"></i> Step Three</a></li>
+                </ul>
+                <div class="tab-content">
+                  <div class="tab-pane active" id="first">
+                    <p>
+                      <strong>Download Smartcare Installer</strong> Run the installer as administrator to install the system in windows.
+                    </p>
+                    <p>
+                      Run the installer as administrator to install the system in windows. Run the installer as administrator to install the system in windows. Run the installer as administrator to install the system in windows.
+                    </p>
+                  </div>
+                  <div class="tab-pane" id="second">
+                    <p>
+                      Set up your user accounts and permissions then activate, Set up your user accounts and permissions then activate,
+                    </p>
+                  </div>
+                  <div class="tab-pane" id="third">
+                    <p>
+                      Enjoy the beautiful and yet efficient EHR system in your facility.
+                    </p>
+                    <p>
+                       Enjoy the beautiful and yet efficient EHR system in your facility. Enjoy the beautiful and yet efficient EHR system in your facility.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+              <!-- end tab -->
+
+            </div>
+
+
+
+
+
+
+
+
+          </div>  <!-- end span9 -->
+        </div>  <!-- end span9 -->
+
+        <div class="span7">
+
+          <div class="clearfix"></div>
+            <aside class="right-sidebar">
+
+              <div class="widget">
+                <h6 class="widgetheading" style="color: black;font-weight: normal !important;font-size: 1.8em !important; margin-bottom: 30px;">RELEASES<span></span></h6>
+
+
+                  {% for version in changelog_entries %}
+                  <div class="accordion" id="accordion2">
+                      <div class="accordion-group">
+                        <div class="accordion-heading">
+                          <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordion2" href="#{{ version.title|slice:":4" }}">
+                    <i class="icon-minus"></i> {{ version.title|title }}</a>
+                        </div>
+                        <div id="{{ version.title|slice:":4" }}" class="accordion-body collapse out">
+                          <div class="accordion-inner">
+                            {{ version.content|safe }}
+                          </div>
+                        </div>
+                      </div>
+                  {% endfor %}
+                </div>
+                <!--end: Accordion -->
+            </aside>
+          </div>
+
+        <!-- </div> -->
+      <!-- </div> -->
+
+      <!-- divider -->
+      <!-- <div class="row">
+        <div class="span12">
+          <div class="solidline"></div>
+        </div>
+      </div> -->
+      <!-- end divider -->
+    </div>
+  </section>
+</div>
+</div>
+
+{% endblock content %}
