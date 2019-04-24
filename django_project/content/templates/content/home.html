@@ -113,6 +113,8 @@
 </section>
 <section id="offer">
   <div class="container">
+
+    {% if sponsors %}
     <div class="row">
       <div class="span12">
         <div class="row">
@@ -132,9 +134,9 @@
         </div>
       </div>
     </div>
+    {% endif %}
 
-
-
+    {% if partners %}
     <div class="row">
       <div class="span12">
         <div class="row">
@@ -154,11 +156,12 @@
         </div>
       </div>
     </div>
+    {% endif %}
 
   </div>
 </section>
 
-
+  {% if team %}
     <section id="content">
       <div class="container">
 
@@ -168,7 +171,7 @@
           </div>
 
           {% for member in team %}
-          
+
           <div class="span3">
             <div class="team-box">
               <a href="#" class="thumbnail"><img src="{% thumbnail member.photo 220x235 crop %}" alt="" /></a>
@@ -188,11 +191,12 @@
           </div>
 
           {% endfor %}
-          
+
         </div>
 
       </div>
     </section>
+    {% endif %}
 
 
 <!-- Modal -->
